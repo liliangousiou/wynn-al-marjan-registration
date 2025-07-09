@@ -1,5 +1,5 @@
 import { OTPSendCode, OTPVerification, PersonalInfoForm } from 'pages';
-import type { RegistrationStep } from 'types';
+import type { FooterLinkGroup, RegistrationStep } from 'types';
 
 export const registrationSteps: RegistrationStep[] = [
   {
@@ -31,3 +31,44 @@ export const NAV_ITEMS: string[] = [
 ];
 
 export const LANGUAGES: string[] = ['EN', 'AR'];
+
+export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
+  {
+    title: 'Explore',
+    items: [
+      { label: 'Shop Home Collection', href: '/shop' },
+      { label: 'Gift Cards', href: '/gift-cards' },
+      { label: 'Wynn Stories', href: '/stories' },
+      { label: 'Wynn Slots App', href: '/slots-app' },
+      { label: 'Mobile App', href: '/mobile-app' },
+      { label: 'Responsible Gaming', href: '/responsible-gaming' },
+    ],
+  },
+  {
+    title: 'Company',
+    items: [
+      { label: 'About us', href: '/about' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'Investor Relations', href: '/investors' },
+      { label: 'Privacy Notice', href: '/privacy' },
+      { label: 'Terms of Use', href: '/terms' },
+      { label: 'Hotel Information & Directory', href: '/hotel-info' },
+    ],
+  },
+  {
+    title: 'Destinations',
+    items: [
+      { label: 'Wynn Palace Cotai', href: '/destinations/wynn-palace' },
+      { label: 'Encore Boston Harbor', href: '/destinations/encore-boston' },
+      { label: 'Wynn Macau', href: '/destinations/wynn-macau' },
+    ],
+  },
+  {
+    // Contact group - no links
+    items: [
+      { label: 'Wynn and Encore Las Vegas' },
+      { label: '3131 Las Vegas Blvd. Las Vegas, NV 89109' },
+      { label: '+1 (702) 770-7000' },
+    ],
+  },
+];

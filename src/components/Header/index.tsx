@@ -5,7 +5,7 @@ import { LANGUAGES, NAV_ITEMS } from '../../constants';
 
 const Header: React.FC = () => {
   return (
-    <header className="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+    <header className="flex justify-between items-center py-[24px] px-[60px] border-b border-gray-200 bg-white">
       {/* Logo */}
       <div className="w-[161px]">
         <img src={logo} alt="Logo" className="h-auto w-full" />
