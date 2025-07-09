@@ -3,7 +3,6 @@ import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import prettierPlugin from 'eslint-plugin-prettier';
-import importPlugin from 'eslint-plugin-import';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
 export default [
@@ -17,18 +16,39 @@ export default [
       react,
       'react-hooks': reactHooks,
       prettier: prettierPlugin,
-      import: importPlugin,
       'simple-import-sort': simpleImportSort,
     },
     rules: {
       'prettier/prettier': 'error',
       'react/react-in-jsx-scope': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      'simple-import-sort/imports': 'error',
+
+      // 💡 Χρησιμοποιούμε μόνο αυτό για sorting
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [
+            // 📦 NPM packages
+            ['^react', '^@?\\w'],
+            // 🏷️ Alias imports (π.χ. constants, components, utils κ.λπ.)
+            [
+              '^constants',
+              '^components',
+              '^hooks',
+              '^pages',
+              '^styles',
+              '^types',
+              '^utils',
+              '^assets',
+            ],
+            // 🧭 Relative imports
+            ['^\\.\\.\\.', '^\\.\\./', '^\\./'],
+            // 🔚 Side effect imports
+            ['^\\u0000'],
+          ],
+        },
+      ],
       'simple-import-sort/exports': 'error',
-      'import/first': 'error',
-      'import/newline-after-import': 'error',
-      'import/no-duplicates': 'error',
     },
     languageOptions: {
       parser: tseslint.parser,
@@ -36,8 +56,10 @@ export default [
       ecmaVersion: 'latest',
     },
     settings: {
-      react: {
-        version: 'detect',
+      'import/resolver': {
+        typescript: {
+          project: './tsconfig.json',
+        },
       },
     },
   },

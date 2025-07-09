@@ -5,14 +5,16 @@
     "useDefineForClassFields": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "baseUrl": ".",
+    /* Imports alias */
+    "baseUrl": "src",
     "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@styles/*": ["src/styles/*"],
-      "@types/*": ["src/types/*"],
-      "@utils/*": ["src/utils/*"]
+      "assets": ["assets"],
+      "components": ["components"],
+      "constants": ["constants"],
+      "pages": ["pages"],
+      "styles": ["styles"],
+      "types": ["types"],
+      "utils": ["utils"]
     },
     "skipLibCheck": true,
     /* Bundler mode */
