@@ -8,7 +8,7 @@ const Title: React.FC<{ currentStep: number }> = ({ currentStep }) => {
         <div className="text-sm text-gray-500 mb-1 md:mb-0">Step {currentStep} of 3</div>
       </header>
 
-      <p className="mb-4 text-gray-600">Please enter below information to create your account.</p>
+      <p className="mb-6 text-gray-600">Please enter below information to create your account.</p>
     </>
   );
 };
