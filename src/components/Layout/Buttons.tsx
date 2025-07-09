@@ -7,18 +7,18 @@ interface FooterProps {
   onNext: () => void;
 }
 
-export const Buttons: React.FC<FooterProps> = ({ currentStep, onBack, onNext }) => {
+const Buttons: React.FC<FooterProps> = ({ currentStep, onBack, onNext }) => {
   return (
     <footer className="flex justify-between mt-8">
-      <button
-        onClick={onBack}
-        disabled={currentStep === 1}
-        className={`px-4 py-2 rounded border ${
-          currentStep === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
-        }`}
-      >
-        Back
-      </button>
+      {currentStep !== 1 && (
+        <button
+          onClick={onBack}
+          disabled={currentStep === 1}
+          className="px-4 py-2 rounded border hover:bg-gray-100"
+        >
+          Back
+        </button>
+      )}
 
       <button
         onClick={onNext}
@@ -29,3 +29,5 @@ export const Buttons: React.FC<FooterProps> = ({ currentStep, onBack, onNext }) 
     </footer>
   );
 };
+
+export default Buttons;

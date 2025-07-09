@@ -1,12 +1,19 @@
-import { Registration } from '@components/Registration';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-export default function App() {
+import { registrationSteps } from 'constants/index';
+import { Layout } from 'components';
+
+function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/register/step-1" replace />} />
-      <Route path="/register" element={<Navigate to="/register/step-1" replace />} />
-      <Route path="/register/*" element={<Registration />} />
-    </Routes>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Navigate to="/register/form" replace />} />
+        {registrationSteps.map(({ path, component: Component }, index) => (
+          <Route key={index} path={path} element={<Component />} />
+        ))}
+      </Routes>
+    </Layout>
   );
 }
+
+export default App;

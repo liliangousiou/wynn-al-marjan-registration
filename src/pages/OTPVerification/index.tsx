@@ -6,7 +6,7 @@ const OTPVerification: React.FC = () => {
       <h2 className="text-lg font-semibold mb-2">OTP Verification</h2>
       <p>Please check your email.</p>
       <p>We've sent a code to anton@gmail.com</p> <br />
-      <p>Code inputs here</p>
+      <p>Code inputs here</p> <br />
       <p>Didn’t get a code? Click to resend.</p>
     </div>
   );

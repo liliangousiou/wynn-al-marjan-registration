@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Title: React.FC<{ currentStep: number }> = ({ currentStep }) => {
+const Title: React.FC<{ currentStep: number }> = ({ currentStep }) => {
   return (
     <>
       <header className="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center mb-4">
@@ -12,3 +12,5 @@ export const Title: React.FC<{ currentStep: number }> = ({ currentStep }) => {
     </>
   );
 };
+
+export default Title;
