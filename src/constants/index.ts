@@ -1,6 +1,7 @@
-import { OTPSendCode, OTPVerification, PersonalInfoForm } from '../pages';
+import { OTPSendCode, OTPVerification, PersonalInfoForm } from 'pages';
+import type { RegistrationStep } from 'types';
 
-export const registrationSteps = [
+export const registrationSteps: RegistrationStep[] = [
   {
     step: 1,
     path: '/register/form',
@@ -18,4 +19,15 @@ export const registrationSteps = [
   },
 ];
 
-export const TOTAL_STEPS = registrationSteps.length;
+export const TOTAL_STEPS: number = registrationSteps.length;
+
+export const NAV_ITEMS: string[] = [
+  'Rooms & Suites',
+  'Wynn Rewards',
+  'Offers',
+  'Dining',
+  'Entertainment',
+  'Meetings & Events',
+];
+
+export const LANGUAGES: string[] = ['EN', 'AR'];
