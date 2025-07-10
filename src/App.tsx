@@ -1,7 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { registrationSteps } from 'constants/index';
-import { Layout } from 'components';
+import { Layout, RegistrationLayout } from 'components';
+import { NotFound } from 'pages';
+
+import { registrationSteps } from './constants';
 
 function App() {
   return (
@@ -9,8 +11,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/register/form" replace />} />
         {registrationSteps.map(({ path, component: Component }, index) => (
-          <Route key={index} path={path} element={<Component />} />
+          <Route
+            key={index}
+            path={path}
+            element={
+              <RegistrationLayout>
+                <Component />
+              </RegistrationLayout>
+            }
+          />
         ))}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
   );
