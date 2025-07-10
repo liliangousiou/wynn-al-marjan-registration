@@ -1,7 +1,8 @@
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import PhoneInput from 'react-phone-number-input';
-import { Info } from 'lucide-react';
+
+import info from 'assets/info.svg';
 
 import 'react-phone-number-input/style.css';
 
@@ -41,14 +42,18 @@ const PersonalInfoForm: React.FC = () => {
             <div>
               First Name <span className="text-red-500">*</span>
             </div>
-            <Info className="w-4 h-4 text-gray-400 ml-1" />
+            <img
+              src={info}
+              alt="First Name"
+              title="Your first name name should match your ID"
+              className="ml-2 cursor-pointer"
+            />
           </label>
           <input
             {...register('firstName', { required: 'First name is required' })}
             placeholder="Enter first name..."
-            className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-              errors.firstName ? 'border-red-500' : ''
-            }`}
+            className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.firstName ? 'border-red-500' : ''
+              }`}
           />
           {errors.firstName && (
             <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>
@@ -61,14 +66,18 @@ const PersonalInfoForm: React.FC = () => {
             <div>
               Last Name <span className="text-red-500">*</span>
             </div>
-            <Info className="w-4 h-4 text-gray-400 ml-1" />
+            <img
+              src={info}
+              alt="Last Name"
+              title="Your last name name should match your ID"
+              className="ml-2 cursor-pointer"
+            />
           </label>
           <input
             {...register('lastName', { required: 'Last name is required' })}
             placeholder="Enter last name..."
-            className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-              errors.lastName ? 'border-red-500' : ''
-            }`}
+            className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.lastName ? 'border-red-500' : ''
+              }`}
           />
           {errors.lastName && (
             <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>
@@ -82,14 +91,18 @@ const PersonalInfoForm: React.FC = () => {
           <div>
             Gender <span className="text-red-500">*</span>
           </div>
-          <Info className="w-4 h-4 text-gray-400 ml-1" />
+          <img
+            src={info}
+            alt="Gender"
+            title="Select your gender"
+            className="ml-2 cursor-pointer"
+          />
         </label>
         <select
           {...register('gender', { required: 'Gender is required' })}
           defaultValue=""
-          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-            errors.gender ? 'border-red-500' : ''
-          }`}
+          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.gender ? 'border-red-500' : ''
+            }`}
         >
           <option value="" disabled>
             Select gender...
@@ -108,14 +121,18 @@ const PersonalInfoForm: React.FC = () => {
           <div>
             Your Residence Country <span className="text-red-500">*</span>
           </div>
-          <Info className="w-4 h-4 text-gray-400 ml-1" />
+          <img
+            src={info}
+            alt="Residence Country"
+            title="Select residence country"
+            className="ml-2 cursor-pointer"
+          />
         </label>
         <select
           {...register('residenceCountry', { required: 'Residence country is required' })}
           defaultValue=""
-          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-            errors.residenceCountry ? 'border-red-500' : ''
-          }`}
+          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.residenceCountry ? 'border-red-500' : ''
+            }`}
         >
           <option value="" disabled>
             Select residence country...
@@ -141,7 +158,12 @@ const PersonalInfoForm: React.FC = () => {
           <div>
             Email <span className="text-red-500">*</span>
           </div>
-          <Info className="w-4 h-4 text-gray-400 ml-1" />
+          <img
+            src={info}
+            alt="Email"
+            title="Enter your email, we'll use it to complete your registration"
+            className="ml-2 cursor-pointer"
+          />
         </label>
         <input
           {...register('email', {
@@ -153,9 +175,8 @@ const PersonalInfoForm: React.FC = () => {
           })}
           placeholder="Enter email address..."
           type="email"
-          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-            errors.email ? 'border-red-500' : ''
-          }`}
+          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.email ? 'border-red-500' : ''
+            }`}
         />
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
       </div>
@@ -166,7 +187,12 @@ const PersonalInfoForm: React.FC = () => {
           <div>
             Phone Number <span className="text-red-500">*</span>
           </div>
-          <Info className="w-4 h-4 text-gray-400 ml-1" />
+          <img
+            src={info}
+            alt="Phone Number"
+            title="Enter a valid phone number where we can reach you out."
+            className="ml-2 cursor-pointer"
+          />
         </label>
 
         <Controller
@@ -180,9 +206,8 @@ const PersonalInfoForm: React.FC = () => {
               defaultCountry="AE"
               international
               countryCallingCodeEditable={false}
-              className={`w-full bg-white border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-                errors.phoneNumber ? 'border-red-500' : ''
-              }`}
+              className={`w-full bg-white border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.phoneNumber ? 'border-red-500' : ''
+                }`}
               onChange={field.onChange}
               value={field.value}
             />

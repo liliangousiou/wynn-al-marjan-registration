@@ -6,8 +6,13 @@ export interface RegistrationStep {
   component: FC;
 }
 
+export type NavigationItem = {
+  key: string;
+  label: string;
+};
+
 export type FooterLinkGroup = {
-  title?: string;
+  key?: string;
   items: {
     label: string;
     href?: string;

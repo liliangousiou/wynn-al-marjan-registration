@@ -1,6 +1,8 @@
 import React from 'react';
 
-import logo from '../../assets/logo.svg';
+import arrow from 'assets/arrow.svg';
+import logo from 'assets/logo.svg';
+
 import { LANGUAGES, NAV_ITEMS } from '../../constants';
 
 const Header: React.FC = () => {
@@ -14,8 +16,12 @@ const Header: React.FC = () => {
       {/* Navigation Menu */}
       <nav className="flex gap-[41px] uppercase text-sm font-medium text-gray-700">
         {NAV_ITEMS.map(item => (
-          <a key={item} href="#" className="hover:text-black transition-colors duration-200">
-            {item}
+          <a
+            key={item.key}
+            href={`/${item.key}`}
+            className="hover:text-black transition-colors duration-200"
+          >
+            {item.label}
           </a>
         ))}
       </nav>
@@ -33,9 +39,7 @@ const Header: React.FC = () => {
           ))}
         </select>
         {/* Down arrow */}
-        <div className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 text-gray-600 w-20">
-          ▾
-        </div>
+        <img src={arrow} alt="Language" className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2" />
       </div>
     </header>
   );

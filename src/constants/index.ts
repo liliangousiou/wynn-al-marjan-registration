@@ -1,5 +1,5 @@
 import { OTPSendCode, OTPVerification, PersonalInfoForm } from 'pages';
-import type { FooterLinkGroup, RegistrationStep } from 'types';
+import type { FooterLinkGroup, NavigationItem, RegistrationStep } from 'types';
 
 export const registrationSteps: RegistrationStep[] = [
   {
@@ -21,20 +21,20 @@ export const registrationSteps: RegistrationStep[] = [
 
 export const TOTAL_STEPS: number = registrationSteps.length;
 
-export const NAV_ITEMS: string[] = [
-  'Rooms & Suites',
-  'Wynn Rewards',
-  'Offers',
-  'Dining',
-  'Entertainment',
-  'Meetings & Events',
+export const NAV_ITEMS: NavigationItem[] = [
+  { key: 'rooms-and-suites', label: 'Rooms & Suites' },
+  { key: 'wynn-rewards', label: 'Wynn Rewards' },
+  { key: 'offers', label: 'Offers' },
+  { key: 'dining', label: 'Dining' },
+  { key: 'entertainment', label: 'Entertainment' },
+  { key: 'meetings-and-events', label: 'Meetings & Events' },
 ];
 
 export const LANGUAGES: string[] = ['EN', 'AR'];
 
 export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
   {
-    title: 'Explore',
+    key: 'explore',
     items: [
       { label: 'Shop Home Collection', href: '/shop' },
       { label: 'Gift Cards', href: '/gift-cards' },
@@ -45,7 +45,7 @@ export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
     ],
   },
   {
-    title: 'Company',
+    key: 'company',
     items: [
       { label: 'About us', href: '/about' },
       { label: 'Careers', href: '/careers' },
@@ -56,7 +56,7 @@ export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
     ],
   },
   {
-    title: 'Destinations',
+    key: 'destinations',
     items: [
       { label: 'Wynn Palace Cotai', href: '/destinations/wynn-palace' },
       { label: 'Encore Boston Harbor', href: '/destinations/encore-boston' },
