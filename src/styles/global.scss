@@ -6,6 +6,18 @@ body {
   background-color: #f7f7f7;
 }
 
+%input-base {
+  @apply px-2 py-1 text-sm w-full focus:outline-none bg-transparent;
+}
+
+%button-primary {
+  @apply uppercase bg-white text-green border-green border-2 rounded px-6 py-[14px] text-sm leading-none transition hover:bg-green hover:text-white;
+}
+
 .input {
-  @apply px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all;
+  @apply px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-50 transition-all;
+}
+
+.heading-h2 {
+  @apply flex items-center font-caslon font-medium text-[21px] leading-[148%] text-dark tracking-normal w-auto;
 }

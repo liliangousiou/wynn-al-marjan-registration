@@ -1,0 +1,83 @@
+@use 'styles/global.scss';
+
+.newsletter {
+  &-section {
+    @apply w-full bg-white py-5 px-2;
+  }
+
+  &-container {
+    @apply max-w-[1300px] flex justify-between mx-auto;
+  }
+
+  &-box {
+    @apply lg:w-[970px] flex flex-col lg:flex-row justify-between items-start lg:items-center;
+  }
+
+  &-description {
+    @apply max-w-[369px] mr-16 font-avenir tracking-[0.5px] align-middle text-base text-grey leading-[150%];
+  }
+
+  &-form {
+    @apply w-[530px] rounded flex items-center px-4 py-2 gap-6 border border-gray-300;
+  }
+
+  &-input {
+    @extend %input-base;
+  }
+
+  &-btn {
+    @extend %button-primary;
+  }
+}
+
+.footer {
+  &-main {
+    @apply w-full bg-chocolate py-10 md:px-20 lg:px-40;
+  }
+
+  &-container {
+    @apply w-full bg-chocolate gap-[10px];
+  }
+}
+
+.nav {
+  &-container {
+    @apply flex justify-between gap-x-6 max-w-6xl px-3 mb-1;
+  }
+
+  &-group {
+    @apply flex flex-col pt-1.5 pb-1.5 gap-3 w-auto;
+  }
+
+  &-item {
+    @apply font-avenir tracking-[0.5px] align-middle text-white text-[11px] leading-6;
+  }
+}
+
+.copyright {
+  &-data {
+    @apply text-xs leading-[14.4px];
+  }
+
+  &-text {
+    @apply text-[11px] leading-[17px];
+  }
+
+  &-container {
+    @apply flex flex-col items-center font-avenir tracking-[0.5px] align-middle text-white gap-2.5 mt-14 w-auto mx-auto;
+  }
+}
+
+.social {
+  &-title {
+    @apply font-avenir tracking-[0.5px] align-middle text-white text-[11px] leading-6;
+  }
+
+  &-links {
+    @apply flex items-center justify-between gap-8 py-1.5;
+  }
+
+  &-link {
+    @apply rounded-[30px] px-2 py-[5px] bg-white h-[27px] min-w-[27px];
+  }
+}

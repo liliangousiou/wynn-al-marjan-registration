@@ -52,8 +52,9 @@ const PersonalInfoForm: React.FC = () => {
           <input
             {...register('firstName', { required: 'First name is required' })}
             placeholder="Enter first name..."
-            className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.firstName ? 'border-red-500' : ''
-              }`}
+            className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              errors.firstName ? 'border-red-500' : ''
+            }`}
           />
           {errors.firstName && (
             <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>
@@ -76,8 +77,9 @@ const PersonalInfoForm: React.FC = () => {
           <input
             {...register('lastName', { required: 'Last name is required' })}
             placeholder="Enter last name..."
-            className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.lastName ? 'border-red-500' : ''
-              }`}
+            className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              errors.lastName ? 'border-red-500' : ''
+            }`}
           />
           {errors.lastName && (
             <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>
@@ -91,18 +93,14 @@ const PersonalInfoForm: React.FC = () => {
           <div>
             Gender <span className="text-red-500">*</span>
           </div>
-          <img
-            src={info}
-            alt="Gender"
-            title="Select your gender"
-            className="ml-2 cursor-pointer"
-          />
+          <img src={info} alt="Gender" title="Select your gender" className="ml-2 cursor-pointer" />
         </label>
         <select
           {...register('gender', { required: 'Gender is required' })}
           defaultValue=""
-          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.gender ? 'border-red-500' : ''
-            }`}
+          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+            errors.gender ? 'border-red-500' : ''
+          }`}
         >
           <option value="" disabled>
             Select gender...
@@ -131,8 +129,9 @@ const PersonalInfoForm: React.FC = () => {
         <select
           {...register('residenceCountry', { required: 'Residence country is required' })}
           defaultValue=""
-          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.residenceCountry ? 'border-red-500' : ''
-            }`}
+          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+            errors.residenceCountry ? 'border-red-500' : ''
+          }`}
         >
           <option value="" disabled>
             Select residence country...
@@ -175,8 +174,10 @@ const PersonalInfoForm: React.FC = () => {
           })}
           placeholder="Enter email address..."
           type="email"
-          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.email ? 'border-red-500' : ''
-            }`}
+          autoComplete="email"
+          className={`bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+            errors.email ? 'border-red-500' : ''
+          }`}
         />
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
       </div>
@@ -206,8 +207,9 @@ const PersonalInfoForm: React.FC = () => {
               defaultCountry="AE"
               international
               countryCallingCodeEditable={false}
-              className={`w-full bg-white border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${errors.phoneNumber ? 'border-red-500' : ''
-                }`}
+              className={`w-full bg-white border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                errors.phoneNumber ? 'border-red-500' : ''
+              }`}
               onChange={field.onChange}
               value={field.value}
             />

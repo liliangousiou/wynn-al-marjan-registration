@@ -1,84 +1,53 @@
 import React from 'react';
 
-import { Android, Apple, Facebook, Instagram, Twitter } from 'assets/social';
+import { FOOTER_LINK_GROUPS } from 'constants/index';
+import type { FooterLinkGroup } from 'types';
+import { getCurrentYear } from 'utils';
 
-import { FOOTER_LINK_GROUPS } from '../../constants';
 import Newsletter from './Newsletter';
+import SocialLinks from './SocialLinks';
+
+import './index.scss';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-white gap-[10px]">
+    <footer className="footer-container">
       {/* Newsletter Section */}
       <Newsletter />
 
       {/* Main Footer */}
-      <div className="bg-[#5a3e36] w-full py-[40px] px-[160px]">
-        <div className="max-w-[1120px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[10px] text-white">
-          {FOOTER_LINK_GROUPS.map((group, idx) => (
-            <div key={idx}>
-              <ul className="space-y-1 text-sm">
-                {group.items.map((item, i) => (
-                  <li key={i}>
-                    {item.href ? (
-                      <a href={item.href} className="hover:underline">
-                        {item.label}
-                      </a>
-                    ) : (
-                      <span>{item.label}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              {/* Social section only under the contact group (last one) */}
-              {idx === FOOTER_LINK_GROUPS.length - 1 && (
-                <div className="mt-6">
-                  <p className="mb-3 font-semibold">Connect with us.</p>
-                  <div className="flex gap-4 items-center">
+      <div className="footer-main">
+        <div className="nav-container">
+          {FOOTER_LINK_GROUPS.map((group: FooterLinkGroup, idx: number) => (
+            <ul className="nav-group" key={idx}>
+              {group.items.map(item => (
+                <li key={item.label} className="nav-item">
+                  {item.href ? (
                     <a
-                      href="#"
-                      aria-label="Facebook"
-                      className="rounded-[30px] px-2 py-[5px] bg-white h-[27px] min-w-[27px]"
+                      href={item.href}
+                      target={item?.target}
+                      rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
+                      className="hover:underline"
                     >
-                      <img src={Facebook} alt="Facebook" className="h-full w-auto" />
+                      {item.label}
                     </a>
-                    <a
-                      href="#"
-                      aria-label="Android"
-                      className="rounded-[30px] px-2 py-[5px] bg-white h-[27px] min-w-[27px]"
-                    >
-                      <img src={Android} alt="Android" className="h-full w-auto" />
-                    </a>
-                    <a
-                      href="#"
-                      aria-label="Apple"
-                      className="rounded-[30px] px-2 py-[5px] bg-white h-[27px] min-w-[27px]"
-                    >
-                      <img src={Apple} alt="Apple" className="h-full w-auto" />
-                    </a>
-                    <a
-                      href="#"
-                      aria-label="Instagram"
-                      className="rounded-[30px] px-2 py-[5px] bg-white h-[27px] min-w-[27px]"
-                    >
-                      <img src={Instagram} alt="Instagram" className="h-full w-auto" />
-                    </a>
-                    <a
-                      href="#"
-                      aria-label="X (Twitter)"
-                      className="rounded-[30px] px-2 py-[5px] bg-white h-[27px] min-w-[27px]"
-                    >
-                      <img src={Twitter} alt="Twitter" className="h-full w-auto" />
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
+                  ) : (
+                    <span>{item.label}</span>
+                  )}
+                </li>
+              ))}
+              {/* Social section under the contact group (last one) */}
+
+              {idx === FOOTER_LINK_GROUPS.length - 1 && <SocialLinks />}
+            </ul>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col items-center text-white text-sm space-y-2">
-          <p>Do Not Sell Or Share My Data</p>
-          <p>&copy; {new Date().getFullYear()} Wynn Resorts Holdings, LLC. All rights reserved.</p>
+        <div className="copyright-container">
+          <p className="copyright-data">Do Not Sell Or Share My Data</p>
+          <p className="copyright-text">
+            &copy; {getCurrentYear()} Wynn Resorts Holdings, LLC. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

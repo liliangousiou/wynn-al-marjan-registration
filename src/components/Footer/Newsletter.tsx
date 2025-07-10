@@ -1,25 +1,65 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
+
+import type { NewsletterFormData } from 'types';
 
 const Newsletter: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    clearErrors,
+  } = useForm<NewsletterFormData>({
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
+  });
+
+  const onSubmit = async (data: NewsletterFormData) => {
+    console.log('Submitting email:', data.email);
+    // TODO: API call / toast here
+    // try {
+    //   await api.subscribe(data.email); // hypothetical API call
+    //   toast.success('Thanks for subscribing!');
+    // } catch (err) {
+    //   toast.error('Something went wrong. Try again later.');
+    // }
+  };
+
   return (
-    <section className="max-w-[1120px] mx-auto w-full py-[20px] px-[70px]">
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+    <section className="newsletter-section">
+      <div className="newsletter-container">
         {/* Title */}
-        <h2 className="inline-block border-b-2 border-gray-300 pb-1 pr-6 mb-6 font-semibold text-xl">
-          Get News & Updates
-        </h2>
+        <h2 className="heading-h2">Get News & Updates</h2>
 
-        {/* Description */}
-        <p className="max-w-[440px] pr-[0] lg:pr-[71px] text-gray-600 mb-6 lg:mb-0">
-          Get latest developments and exciting news on how we are shaping the future!
-        </p>
+        <div className="newsletter-box">
+          {/* Description */}
+          <p className="newsletter-description">
+            Get latest developments and exciting news on how we are shaping the future!
+          </p>
 
-        {/* Email Input + Button */}
-        <div className="flex items-center gap-[81px]">
-          <label className="text-sm font-medium text-gray-700">Your email address</label>
-          <button className="uppercase border border-green-600 text-green-600 bg-white px-4 py-2 text-sm hover:bg-green-50 transition">
-            Join the newsletter
-          </button>
+          {/* Email Input + Button */}
+          <form onSubmit={handleSubmit(onSubmit)} className="newsletter-form">
+            <div className="flex-1">
+              <input
+                type="email"
+                autoComplete="email"
+                {...register('email', {
+                  required: 'Email is required',
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: 'Enter a valid email address',
+                  },
+                })}
+                placeholder="Your email address"
+                onChange={() => clearErrors('email')}
+                className={`newsletter-input ${errors.email ? 'text-red' : 'text-grey'}`}
+              />
+            </div>
+
+            <button type="submit" className="newsletter-btn">
+              Join the newsletter
+            </button>
+          </form>
         </div>
       </div>
     </section>

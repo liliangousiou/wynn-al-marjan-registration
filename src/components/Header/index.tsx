@@ -39,7 +39,11 @@ const Header: React.FC = () => {
           ))}
         </select>
         {/* Down arrow */}
-        <img src={arrow} alt="Language" className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2" />
+        <img
+          src={arrow}
+          alt="Language"
+          className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2"
+        />
       </div>
     </header>
   );
