@@ -30,10 +30,8 @@ const PersonalInfoForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="my-8">
-      {/* Personal Information Title */}
-      <h2 className="inline-block border-b-2 border-gray-300 pb-1 pr-6 mb-6 font-semibold text-xl">
-        Personal Information
-      </h2>
+      {/* Personal Info Title */}
+      <h2>Personal Info</h2>
 
       <div className="flex gap-6 mb-6">
         {/* First Name */}
@@ -147,9 +145,7 @@ const PersonalInfoForm: React.FC = () => {
       </div>
 
       {/* Contact Details Title */}
-      <h2 className="inline-block border-b-2 border-gray-300 pb-1 pr-6 mb-6 font-semibold text-xl">
-        Contact Details
-      </h2>
+      <h2>Contact Details</h2>
 
       {/* Email */}
       <div className="flex flex-col mb-6">

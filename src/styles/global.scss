@@ -2,22 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  header {
+    @apply wide flex-row flex-wrap;
+  }
+
+  footer {
+    @apply w-full bg-chocolate gap-[10px];
+  }
+
+  nav {
+    @apply flex flex-1 items-center justify-between w-full md:max-w-[842px];
+
+    >a {
+      @apply font-avenir font-medium text-xs lg:text-sm tracking-[0.5px] text-black uppercase text-center align-middle transition-all duration-300 border-b border-transparent hover:border-black;
+    }
+  }
+
+  h1 {
+    @apply font-caslon font-medium text-dark text-2xl md:text-[37px] leading-[42px];
+  }
+
+  h2 {
+    @apply flex items-center font-caslon font-medium text-dark text-[22px] leading-[100%] w-[164px] pb-2 mb-5 border-b border-b-dark;
+  }
+
+  h3 {
+    @apply flex items-center font-caslon font-medium text-dark text-base sm:text-lg md:text-[21px] leading-[148%] w-auto;
+  }
+
+  label {
+    @apply flex items-center justify-between font-caslon font-medium text-sm leading-[140%] tracking-[0.03em] text-dark capitalize h-5 mb-1.5;
+  }
+
+  button {
+    @apply font-avenir font-medium text-base tracking-[6%] rounded h-[56px] gap-4 uppercase;
+  }
+}
+
+@layer components {
+  .wide {
+    @apply flex md:flex-row justify-between items-center text-center w-full bg-white px-3 md:px-12 xl:px-[60px] py-4 gap-3 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-12;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-teal text-white;
+  }
+
+  .btn-outline {
+    @apply px-8 border border-teal text-teal bg-transparent;
+  }
+
+  .logo {
+    @apply h-8 sm:h-12 md:h-14 lg:h-16 xl:h-20 min-w-36 w-auto xl:mr-1;
+  }
+}
+
+
 body {
-  background-color: #f7f7f7;
+  @apply bg-light;
 }
 
-%input-base {
-  @apply px-2 py-1 text-sm w-full focus:outline-none bg-transparent;
-}
-
-%button-primary {
-  @apply uppercase bg-white text-green border-green border-2 rounded px-6 py-[14px] text-sm leading-none transition hover:bg-green hover:text-white;
-}
-
-.input {
-  @apply px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-50 transition-all;
-}
-
-.heading-h2 {
-  @apply flex items-center font-caslon font-medium text-[21px] leading-[148%] text-dark tracking-normal w-auto;
+.root {
+  @apply w-full overflow-x-hidden;
 }

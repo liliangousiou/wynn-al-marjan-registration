@@ -1,9 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import type { NewsletterFormData } from 'types';
 
 const Newsletter: React.FC = () => {
+  const { t } = useTranslation();
+
   const {
     register,
     handleSubmit,
@@ -26,42 +29,36 @@ const Newsletter: React.FC = () => {
   };
 
   return (
-    <section className="newsletter-section">
-      <div className="newsletter-container">
+    <section className="newsletter">
+      <div className='newsletter-left'>
         {/* Title */}
-        <h2 className="heading-h2">Get News & Updates</h2>
+        <h3>{t('newsletter.title')}</h3>
 
-        <div className="newsletter-box">
-          {/* Description */}
-          <p className="newsletter-description">
-            Get latest developments and exciting news on how we are shaping the future!
-          </p>
-
-          {/* Email Input + Button */}
-          <form onSubmit={handleSubmit(onSubmit)} className="newsletter-form">
-            <div className="flex-1">
-              <input
-                type="email"
-                autoComplete="email"
-                {...register('email', {
-                  required: 'Email is required',
-                  pattern: {
-                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: 'Enter a valid email address',
-                  },
-                })}
-                placeholder="Your email address"
-                onChange={() => clearErrors('email')}
-                className={`newsletter-input ${errors.email ? 'text-red' : 'text-grey'}`}
-              />
-            </div>
-
-            <button type="submit" className="newsletter-btn">
-              Join the newsletter
-            </button>
-          </form>
-        </div>
+        {/* Description */}
+        <p className="newsletter-description">{t('newsletter.description')}</p>
       </div>
+
+      {/* Email Input + Button */}
+      <form onSubmit={handleSubmit(onSubmit)} className="newsletter-form">
+        <input
+          type="email"
+          autoComplete="email"
+          {...register('email', {
+            required: t('newsletter.emailRequired'),
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: t('newsletter.emailInvalid'),
+            },
+          })}
+          placeholder={t('newsletter.emailPlaceholder')}
+          onChange={() => clearErrors('email')}
+          className={`newsletter-form-input ${errors.email ? 'text-red' : 'text-neutral-dark'}`}
+        />
+
+        <button type="submit" className="newsletter-form-btn">
+          {t('newsletter.cta')}
+        </button>
+      </form>
     </section>
   );
 };

@@ -8,11 +8,12 @@ export default {
         caslon: ['"Big Caslon"', 'serif'],
       },
       colors: {
-        grey: '#565759',
+        light: '#F7F7F7',
         dark: '#1D1F22',
-        green: '#006F62',
+        teal: '#006F62',
         red: '#B3261E',
         chocolate: '#5A3A27',
+        'neutral-dark': '#565759',
       },
       maxWidth: {
         layout: '630px',
@@ -23,11 +24,12 @@ export default {
     function ({ addBase, theme }) {
       addBase({
         ':root': {
-          '--color-grey': theme('colors.grey'),
+          '--color-light': theme('colors.light'),
           '--color-dark': theme('colors.dark'),
-          '--color-green': theme('colors.green'),
+          '--color-teal': theme('colors.teal'),
           '--color-red': theme('colors.red'),
           '--color-chocolate': theme('colors.chocolate'),
+          '--color-neutral-dark': theme('colors.neutral-dark'),
         },
       });
     },

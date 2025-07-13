@@ -4,9 +4,7 @@ const OTPVerification: React.FC = () => {
   return (
     <div>
       {/* Step Title */}
-      <h2 className="inline-block border-b-2 border-gray-300 pb-1 pr-6 mb-6 font-semibold text-xl">
-        OTP Verification
-      </h2>
+      <h2>OTP Verification</h2>
 
       {/* White Box Wrapper */}
       <div className="bg-white p-6 rounded-xl shadow-md w-full flex flex-col items-center">
