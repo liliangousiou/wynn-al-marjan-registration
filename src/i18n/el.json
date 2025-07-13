@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "rooms-and-suites": "Δωμάτια & Σουίτες",
+    "wynn-rewards": "Ανταμοιβές Wynn",
+    "offers": "Προσφορές",
+    "dining": "Εστίαση",
+    "entertainment": "Ψυχαγωγία",
+    "meetings-and-events": "Συναντήσεις & Εκδηλώσεις"
+  },
+  "back": "Πίσω",
+  "next": "Επόμενο",
+  "footer": {
+    "links": {
+      "shop": "Αγορά Home Collection",
+      "gift-cards": "Κάρτες Δώρου",
+      "stories": "Ιστορίες Wynn",
+      "slots-app": "Εφαρμογή Wynn Slots",
+      "mobile-app": "Εφαρμογή για Κινητά",
+      "responsible-gaming": "Υπεύθυνο Παιχνίδι",
+      "about": "Σχετικά με εμάς",
+      "careers": "Καριέρα",
+      "investors": "Σχέσεις με Επενδυτές",
+      "privacy": "Πολιτική Απορρήτου",
+      "terms": "Όροι Χρήσης",
+      "hotel-info": "Πληροφορίες Ξενοδοχείου & Κατάλογος",
+      "wynn-palace": "Wynn Palace Cotai",
+      "encore-boston": "Encore Boston Harbor",
+      "wynn-macau": "Wynn Macau"
+    },
+    "contact": {
+      "name": "Wynn Al Marjan Island",
+      "address": "Νήσος Al Marjan, Ras Al Khaimah",
+      "phone": "+971 7 209 6699"
+    },
+    "connect": "Συνδεθείτε μαζί μας.",
+    "doNotSell": "Απαγορεύεται Η Πώληση Ή Κοινοποήση Των Δεδομένων Μου",
+    "copyright": "{{year}} Wynn Resorts Holdings, LLC. Με επιφύλαξη κάθε δικαιώματος."
+  },
+  "newsletter": {
+    "title": "Λάβετε νέα & ενημερώσεις",
+    "description": "Λάβετε τις πιο πρόσφατες εξελίξεις και συναρπαστικά νέα για το μέλλον μας!",
+    "emailPlaceholder": "Η διεύθυνση email σας",
+    "emailRequired": "Το email είναι υποχρεωτικό",
+    "emailInvalid": "Εισαγάγετε έγκυρη διεύθυνση email",
+    "cta": "Εγγραφή στο newsletter",
+    "success": "Ευχαριστούμε για την εγγραφή!",
+    "error": "Κάτι πήγε στραβά. Δοκιμάστε ξανά αργότερα."
+  },
+  "notFound": {
+    "title": "Η Σελίδα Δεν Βρέθηκε",
+    "description": "Η σελίδα που αναζητάτε δεν υπάρχει ή έχει μετακινηθεί.",
+    "cta": "Μετάβαση στην Εγγραφή"
+  }
+}

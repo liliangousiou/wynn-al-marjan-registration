@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { Layout, RegistrationLayout } from 'components';
@@ -6,6 +7,10 @@ import { NotFound } from 'pages';
 import { registrationSteps } from './constants';
 
 function App() {
+  const { ready } = useTranslation();
+
+  if (!ready) return null; // TODO: add loader
+
   return (
     <Layout>
       <Routes>

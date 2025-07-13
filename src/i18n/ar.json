@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "rooms-and-suites": "الغرف والأجنحة",
+    "wynn-rewards": "مكافآت Wynn",
+    "offers": "العروض",
+    "dining": "تناول الطعام",
+    "entertainment": "الترفيه",
+    "meetings-and-events": "الاجتماعات والفعاليات"
+  },
+  "back": "العودة",
+  "next": "التالي",
+  "footer": {
+    "links": {
+      "shop": "تسوق مجموعة المنزل",
+      "gift-cards": "بطاقات الهدايا",
+      "stories": "قصص Wynn",
+      "slots-app": "تطبيق Wynn Slots",
+      "mobile-app": "تطبيق الهاتف",
+      "responsible-gaming": "اللعب المسؤول",
+      "about": "من نحن",
+      "careers": "الوظائف",
+      "investors": "علاقات المستثمرين",
+      "privacy": "إشعار الخصوصية",
+      "terms": "شروط الاستخدام",
+      "hotel-info": "معلومات ودليل الفندق",
+      "wynn-palace": "وين بالاس كوتاي",
+      "encore-boston": "انكور بوسطن هاربور",
+      "wynn-macau": "وين ماكاو"
+    },
+    "contact": {
+      "name": "وين جزيرة المرجان",
+      "address": "جزيرة المرجان، رأس الخيمة",
+      "phone": "+971 7 209 6699"
+    },
+    "connect": "تواصل معنا.",
+    "doNotSell": "لا تبيع أو تشارك بياناتي",
+    "copyright": "{{year}} شركة Wynn Resorts Holdings. جميع الحقوق محفوظة."
+  },
+  "newsletter": {
+    "title": "احصل على الأخبار والتحديثات",
+    "description": "اطلع على آخر المستجدات والأخبار المثيرة حول مستقبلنا!",
+    "emailPlaceholder": "عنوان بريدك الإلكتروني",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
+    "cta": "اشترك في النشرة",
+    "success": "شكرًا لاشتراكك!",
+    "error": "حدث خطأ ما. يرجى المحاولة لاحقًا."
+  },
+  "notFound": {
+    "title": "الصفحة غير موجودة",
+    "description": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+    "cta": "اذهب إلى التسجيل"
+  }
+}

@@ -1,7 +1,39 @@
 import { OTPSendCode, OTPVerification, PersonalInfoForm } from 'pages';
-import type { FooterLinkGroup, NavigationItem, RegistrationStep, SocialLink } from 'types';
+import type { ContactLink, DisplayLang, LanguageCode, RegistrationStep, SocialLink } from 'types';
 import { Android, Apple, Facebook, Instagram, Twitter } from 'assets/social';
 
+/* language set up for english, arabic and greek */
+export const LANG_STORAGE_KEY = 'language';
+export const LANGUAGES: DisplayLang[] = ['EN', 'AR', 'GR'];
+
+export const DISPLAY_LANG_MAP = {
+  en: 'EN',
+  ar: 'AR',
+  el: 'GR', // display as GR but still use `el` internally
+};
+export const LANGUAGE_MAP: Record<LanguageCode, DisplayLang> = {
+  en: 'EN',
+  ar: 'AR',
+  el: 'GR',
+};
+
+export const DISPLAY_TO_CODE_MAP: Record<DisplayLang, LanguageCode> = {
+  EN: 'en',
+  AR: 'ar',
+  GR: 'el',
+};
+
+/* header navigation */
+export const NAVIGATION_KEYS = [
+  'rooms-and-suites',
+  'wynn-rewards',
+  'offers',
+  'dining',
+  'entertainment',
+  'meetings-and-events',
+] as const;
+
+/* registration steps */
 export const registrationSteps: RegistrationStep[] = [
   {
     step: 1,
@@ -22,66 +54,25 @@ export const registrationSteps: RegistrationStep[] = [
 
 export const TOTAL_STEPS: number = registrationSteps.length;
 
-export const NAV_ITEMS: NavigationItem[] = [
-  { key: 'rooms-and-suites', label: 'Rooms & Suites' },
-  { key: 'wynn-rewards', label: 'Wynn Rewards' },
-  { key: 'offers', label: 'Offers' },
-  { key: 'dining', label: 'Dining' },
-  { key: 'entertainment', label: 'Entertainment' },
-  { key: 'meetings-and-events', label: 'Meetings & Events' },
+/* footer mocked data */
+export const FOOTER_LINK_GROUPS: string[][] = [
+  ['shop', 'gift-cards', 'stories', 'slots-app', 'mobile-app', 'responsible-gaming'],
+  ['about', 'careers', 'investors', 'privacy', 'terms', 'hotel-info'],
+  ['wynn-palace', 'encore-boston', 'wynn-macau'],
 ];
 
-export const LANGUAGES: string[] = ['EN', 'AR'];
-
-export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
+export const CONTACT_INFO: ContactLink[] = [
   {
-    key: 'explore',
-    items: [
-      { label: 'Shop Home Collection', href: '/shop' },
-      { label: 'Gift Cards', href: '/gift-cards' },
-      { label: 'Wynn Stories', href: '/stories' },
-      { label: 'Wynn Slots App', href: '/slots-app' },
-      { label: 'Mobile App', href: '/mobile-app' },
-      { label: 'Responsible Gaming', href: '/responsible-gaming' },
-    ],
+    key: 'name',
+    href: 'https://maps.app.goo.gl/fq9H3LR9TULGYzF7A',
   },
   {
-    key: 'company',
-    items: [
-      { label: 'About us', href: '/about' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'Investor Relations', href: '/investors' },
-      { label: 'Privacy Notice', href: '/privacy' },
-      { label: 'Terms of Use', href: '/terms' },
-      { label: 'Hotel Information & Directory', href: '/hotel-info' },
-    ],
+    key: 'address',
+    href: 'https://maps.app.goo.gl/fq9H3LR9TULGYzF7A',
   },
   {
-    key: 'destinations',
-    items: [
-      { label: 'Wynn Palace Cotai', href: '/destinations/wynn-palace' },
-      { label: 'Encore Boston Harbor', href: '/destinations/encore-boston' },
-      { label: 'Wynn Macau', href: '/destinations/wynn-macau' },
-    ],
-  },
-  {
-    key: 'contact',
-    items: [
-      {
-        label: 'Wynn Al Marjan Island',
-        href: 'https://maps.app.goo.gl/fq9H3LR9TULGYzF7A',
-        target: '_blank',
-      },
-      {
-        label: 'Al Marjan Island, Ras Al Khaimah',
-        href: 'https://maps.app.goo.gl/fq9H3LR9TULGYzF7A',
-        target: '_blank',
-      },
-      {
-        label: '+971 7 209 6699',
-        href: 'tel:+97172096699',
-      },
-    ],
+    key: 'phone',
+    href: 'tel:+97172096699',
   },
 ];
 

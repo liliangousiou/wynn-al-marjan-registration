@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "rooms-and-suites": "Rooms & suites",
+    "wynn-rewards": "Wynn rewards",
+    "offers": "Offers",
+    "dining": "Dining",
+    "entertainment": "Entertainment",
+    "meetings-and-events": "Meetings & events"
+  },
+  "back": "Back",
+  "next": "Next",
+  "footer": {
+    "links": {
+      "shop": "Shop Home Collection",
+      "gift-cards": "Gift Cards",
+      "stories": "Wynn Stories",
+      "slots-app": "Wynn Slots App",
+      "mobile-app": "Mobile App",
+      "responsible-gaming": "Responsible Gaming",
+      "about": "About us",
+      "careers": "Careers",
+      "investors": "Investor Relations",
+      "privacy": "Privacy Notice",
+      "terms": "Terms of Use",
+      "hotel-info": "Hotel Information & Directory",
+      "wynn-palace": "Wynn Palace Cotai",
+      "encore-boston": "Encore Boston Harbor",
+      "wynn-macau": "Wynn Macau"
+    },
+    "contact": {
+      "name": "Wynn Al Marjan Island",
+      "address": "Al Marjan Island, Ras Al Khaimah",
+      "phone": "+971 7 209 6699"
+    },
+    "connect": "Connect with us.",
+    "doNotSell": "Do Not Sell Or Share My Data",
+    "copyright": "{{year}} Wynn Resorts Holdings, LLC. All rights reserved."
+  },
+  "newsletter": {
+    "title": "Get news & updates",
+    "description": "Get latest developments and exciting news on how we are shaping the future!",
+    "emailPlaceholder": "Your email address",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Enter a valid email address",
+    "cta": "Join the newsletter",
+    "success": "Thanks for subscribing!",
+    "error": "Something went wrong. Try again later."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you’re looking for doesn’t exist or has been moved.",
+    "cta": "Go to Registration"
+  }
+}
