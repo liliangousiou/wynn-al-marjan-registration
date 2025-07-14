@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { CONTACT_INFO, FOOTER_LINK_GROUPS } from 'constants/index';
-import type { FooterLinkGroup } from 'types';
 import { getCurrentYear, renderContactLinkAttrs } from 'utils';
 
 import Newsletter from './Newsletter';
@@ -26,9 +25,7 @@ const Footer: React.FC = () => {
             <ul className="nav-group" key={colIdx}>
               {column.map(key => (
                 <li key={key} className="nav-item">
-                  <a href={`/${key}`} >
-                    {t(`footer.links.${key}`)}
-                  </a>
+                  <a href={`/${key}`}>{t(`footer.links.${key}`)}</a>
                 </li>
               ))}
             </ul>

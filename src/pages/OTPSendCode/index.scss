@@ -1,0 +1,44 @@
+@use 'styles/global.scss';
+
+@layer components {
+  .otp-container {
+    @apply flex flex-col gap-8;
+  }
+
+  .white-box {
+    @apply w-full flex flex-col flex-1 bg-white rounded-s py-6 px-3 sm:p-6 gap-5;
+  }
+
+  .header {
+    &-section {
+      @apply flex flex-col items-center gap-4;
+    }
+
+    &-title {
+      @apply text-xl leading-7 text-center font-medium text-darkBlue font-caslon;
+    }
+
+    &-subtitle {
+      @apply text-base leading-5 text-center font-avenir font-normal text-muted;
+    }
+  }
+
+  .radio-wrapper {
+    @apply flex justify-center gap-5;
+  }
+
+  .radio-label {
+    @apply relative flex items-center gap-2 w-[170px] sm:w-[200px] h-[74px] p-3 pl-11 rounded-md cursor-pointer font-avenir font-medium text-black;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+  }
+
+  .radio-input {
+    @apply absolute opacity-0 w-0 h-0 pointer-events-none hidden;
+  }
+
+  .radio-icon {
+    @apply absolute left-3 top-1/2 transform -translate-y-1/2 w-[24px] h-[24px] pointer-events-none;
+  }
+}

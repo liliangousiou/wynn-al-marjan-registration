@@ -30,7 +30,7 @@ const Newsletter: React.FC = () => {
 
   return (
     <section className="newsletter">
-      <div className='newsletter-left'>
+      <div className="newsletter-left">
         {/* Title */}
         <h3>{t('newsletter.title')}</h3>
 
@@ -55,7 +55,7 @@ const Newsletter: React.FC = () => {
           className={`newsletter-form-input ${errors.email ? 'text-red' : 'text-neutral-dark'}`}
         />
 
-        <button type="submit" className="newsletter-form-btn">
+        <button type="submit" className="newsletter-form-btn tracking-[6%]">
           {t('newsletter.cta')}
         </button>
       </form>

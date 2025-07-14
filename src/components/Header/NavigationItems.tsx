@@ -8,7 +8,7 @@ const NavigationItems: React.FC = () => {
   return (
     <>
       {navItems.map(item => (
-        <a key={item.key} href={`/${item.key}`} className='min-w-0 truncate'>
+        <a key={item.key} href={`/${item.key}`}>
           {item.label}
         </a>
       ))}

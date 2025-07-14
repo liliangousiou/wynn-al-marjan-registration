@@ -42,3 +42,15 @@ export type SocialLink = {
 export type NewsletterFormData = {
   email: string;
 };
+
+export type FormData = {
+  firstName: string;
+  lastName: string;
+  gender: string;
+  residenceCountry: string;
+  email: string;
+  phoneNumber: string;
+  agreeTerms: boolean;
+};
+
+export type OTPMethod = 'phone' | 'email';

@@ -36,7 +36,7 @@ const RegistrationLayout: React.FC<RegistrationLayoutProps> = ({ children }) => 
   };
 
   return (
-    <main className="max-w-layout flex-grow container mx-auto my-8 py-6">
+    <main>
       <Title currentStep={currentStep} />
 
       {children}

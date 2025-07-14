@@ -46,6 +46,78 @@
     "success": "Thanks for subscribing!",
     "error": "Something went wrong. Try again later."
   },
+  "registration": {
+    "title": "Registration",
+    "stepIndicator": "Step {{current}} of {{total}}",
+    "subtitle": "Please enter below information to create your account.",
+    "otpVerification": "OTP Verification"
+  },
+  "form": {
+    "required": "This field is required.",
+    "personal-info": {
+      "title": "Personal Info"
+    },
+    "contact-details": {
+      "title": "Contact Details"
+    },
+    "firstName": {
+      "label": "First Name",
+      "placeholder": "Enter your first name",
+      "info": "Please provide your given name."
+    },
+    "lastName": {
+      "label": "Last Name",
+      "placeholder": "Enter your last name",
+      "info": "Please provide your family or surname."
+    },
+    "gender": {
+      "label": "Gender",
+      "placeholder": "Select your gender",
+      "info": "We ask this for demographic purposes only.",
+      "female": "Female",
+      "male": "Male",
+      "other": "Other",
+      "preferNotToSay": "Prefer not to say"
+    },
+    "residenceCountry": {
+      "label": "Country of Residence",
+      "placeholder": "Select your country",
+      "info": "This helps us understand your legal jurisdiction."
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "Enter your email",
+      "info": "We’ll use this to contact you.",
+      "invalid": "Please enter a valid email address."
+    },
+    "phone": {
+      "label": "Phone Number",
+      "placeholder": "Enter your phone number",
+      "info": "Please include your country code."
+    },
+    "agree": {
+      "prefix": "I agree to the",
+      "terms": "Terms of Use",
+      "and": "and",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "otp": {
+    "sendTitle": "Send code",
+    "sendDescription": "How would you like to receive the code?",
+    "sendToPhone": "Send to Phone",
+    "sendToEmail": "Send to Email"
+  },
+  "verification": {
+    "checkEmailTitle": "Please check your email.",
+    "codeSent": "We've sent a code to {{email}}",
+    "noCode": "Didn’t get a code? <resend>Click to resend</resend>."
+  },
+  "country": {
+    "ae": "United Arab Emirates",
+    "us": "United States",
+    "uk": "United Kingdom"
+  },
   "notFound": {
     "title": "Page Not Found",
     "description": "The page you’re looking for doesn’t exist or has been moved.",

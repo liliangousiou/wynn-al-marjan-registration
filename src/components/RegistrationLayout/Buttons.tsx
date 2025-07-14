@@ -1,28 +1,33 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-interface FooterProps {
+interface ButtonsProps {
   currentStep: number;
   totalSteps: number;
   onBack: () => void;
   onNext: () => void;
 }
 
-const Buttons: React.FC<FooterProps> = ({ currentStep, onBack, onNext }) => {
+const Buttons: React.FC<ButtonsProps> = ({ currentStep, onBack, onNext }) => {
+  const { t } = useTranslation();
+
   return (
-    <footer className="flex justify-between mt-8 gap-[40px]">
+    <div
+      className={`flex ${currentStep !== 1 ? 'justify-between' : 'justify-center sm:justify-start'} gap-2 sm:gap-[40px]`}
+    >
       {currentStep !== 1 && (
-        <button onClick={onBack} className="px-4 py-2 rounded border hover:bg-gray-100 w-full">
-          Back
+        <button onClick={onBack} className="btn-outline h-14 w-full">
+          {t('back')}
         </button>
       )}
 
       <button
         onClick={onNext}
-        className={`px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 ${currentStep !== 1 ? 'w-full' : 'w-[217px]'}`}
+        className={`btn-primary ${currentStep !== 1 ? 'w-full' : 'w-[217px]'}`}
       >
-        Next
+        {t('next')}
       </button>
-    </footer>
+    </div>
   );
 };
 

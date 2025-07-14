@@ -1,0 +1,21 @@
+@use 'styles/global.scss';
+
+@layer components {
+  .register {
+    &-input {
+      @apply bg-white border rounded-md px-3 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400;
+    }
+
+    &-terms {
+      @apply flex items-center;
+
+      &-text {
+        @apply font-avenir text-base leading-[160%] tracking-[0.5px] normal-case py-3 pr-4 pl-1;
+
+        > a {
+          @apply px-1.5;
+        }
+      }
+    }
+  }
+}

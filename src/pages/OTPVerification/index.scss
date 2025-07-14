@@ -1,0 +1,58 @@
+@use 'styles/global.scss';
+
+@layer components {
+  .otp-container {
+    @apply flex flex-col gap-8;
+  }
+
+  .white-box {
+    @apply w-full flex flex-col flex-1 bg-white rounded-s py-6 px-3 sm:p-6 gap-5;
+  }
+
+  .header {
+    &-section {
+      @apply flex flex-col items-center gap-4;
+    }
+
+    &-title {
+      @apply text-xl leading-7 text-center font-medium text-darkBlue font-caslon;
+    }
+
+    &-subtitle {
+      @apply text-base leading-5 text-center font-avenir font-normal text-muted;
+    }
+  }
+
+  .inputs {
+    &-wrapper {
+      @apply flex flex-col gap-3.5;
+    }
+
+    &-container {
+      @apply flex justify-between mx-auto gap-3;
+    }
+  }
+
+  .otp-input {
+    @apply w-16 sm:w-20 h-16 sm:h-20 rounded-lg border border-chocolate bg-white text-center text-chocolate font-avenir font-semibold p-2;
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  }
+
+  .resend {
+    &-button {
+      @apply underline normal-case leading-5 font-avenir;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    &-text {
+      @apply text-base leading-5 text-center font-avenir text-muted;
+    }
+  }
+}

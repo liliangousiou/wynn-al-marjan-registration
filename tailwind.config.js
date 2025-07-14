@@ -14,8 +14,10 @@ export default {
         red: '#B3261E',
         chocolate: '#5A3A27',
         'neutral-dark': '#565759',
+        muted: '#667085',
+        darkBlue: '#101828',
       },
-      maxWidth: {
+      width: {
         layout: '630px',
       },
     },
