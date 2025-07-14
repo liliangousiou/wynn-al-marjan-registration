@@ -54,12 +54,8 @@
   },
   "form": {
     "required": "This field is required.",
-    "personal-info": {
-      "title": "Personal Info"
-    },
-    "contact-details": {
-      "title": "Contact Details"
-    },
+    "personalInfo": "Personal Info",
+    "contactDetails": "Contact Details",
     "firstName": {
       "label": "First Name",
       "placeholder": "Enter your first name",
@@ -77,7 +73,13 @@
       "female": "Female",
       "male": "Male",
       "other": "Other",
-      "preferNotToSay": "Prefer not to say"
+      "preferNotToSay": "Prefer not to say",
+      "gender": {
+        "label": "Gender",
+        "male": "Male",
+        "female": "Female",
+        "placeholder": "Select gender"
+      }
     },
     "residenceCountry": {
       "label": "Country of Residence",
@@ -95,12 +97,7 @@
       "placeholder": "Enter your phone number",
       "info": "Please include your country code."
     },
-    "agree": {
-      "prefix": "I agree to the",
-      "terms": "Terms of Use",
-      "and": "and",
-      "privacy": "Privacy Policy"
-    }
+    "agreeTermsHtml": "I agree to the <1>terms and conditions</1> and <3>privacy policy</3>."
   },
   "otp": {
     "sendTitle": "Send code",

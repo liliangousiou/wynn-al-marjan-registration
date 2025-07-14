@@ -1,4 +1,6 @@
-export const formFields = [
+import type { FormField } from "types";
+
+export const formFields: FormField[] = [
   {
     name: 'firstName',
     label: 'First Name',
@@ -44,16 +46,16 @@ export const formFields = [
     ],
     info: 'Select residence country',
   },
-  // {
-  //   name: 'email',
-  //   label: 'Email',
-  //   placeholder: 'Enter email address...',
-  //   type: 'email',
-  //   requiredMsg: 'Email is required',
-  //   pattern: {
-  //     value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-  //     message: 'Invalid email address',
-  //   },
-  //   info: "Enter your email, we'll use it to complete your registration",
-  // },
+  {
+    name: 'email',
+    label: 'Email',
+    placeholder: 'Enter email address...',
+    type: 'email',
+    requiredMsg: 'Email is required',
+    pattern: {
+      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      message: 'Invalid email address',
+    },
+    info: "Enter your email, we'll use it to complete your registration",
+  },
 ];

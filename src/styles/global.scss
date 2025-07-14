@@ -28,7 +28,7 @@
   }
 
   h2 {
-    @apply flex items-center font-caslon font-medium text-dark text-[22px] leading-[100%] w-[164px] pb-2 border-b border-b-dark;
+    @apply flex items-center font-caslon font-medium text-dark text-[22px] leading-[100%] min-w-[164px] w-fit pr-7 pb-2 border-b border-b-dark;
   }
 
   h3 {

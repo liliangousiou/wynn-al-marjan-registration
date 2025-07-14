@@ -7,10 +7,10 @@
     }
 
     &-terms {
-      @apply flex items-center;
+      @apply flex items-center gap-2 py-3 pr-4 pl-1;
 
       &-text {
-        @apply font-avenir text-base leading-[160%] tracking-[0.5px] normal-case py-3 pr-4 pl-1;
+        @apply font-avenir text-base leading-[160%] tracking-[0.5px] normal-case;
 
         > a {
           @apply px-1.5;

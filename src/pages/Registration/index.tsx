@@ -1,17 +1,26 @@
-import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import PhoneInput from 'react-phone-number-input';
+import React, { useEffect, useState } from 'react';
+import { Controller, useForm, useWatch } from 'react-hook-form';
+import { Trans, useTranslation } from 'react-i18next';
 
-import { Label } from 'components';
+import { Checkbox, Dropdown, TextInput } from 'components/Form';
 import type { FormData } from 'types';
 import { formFields } from 'utils/formFields';
-import CheckboxIcon from 'assets/checkbox.svg';
-import CheckboxCheckedIcon from 'assets/checkbox-checked.svg';
 
 import 'react-phone-number-input/style.css';
 import './index.scss';
 
+function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  useEffect(() => {
+    const handler = setTimeout(() => setDebouncedValue(value), delay);
+    return () => clearTimeout(handler);
+  }, [value, delay]);
+  return debouncedValue;
+}
+
 const Registration: React.FC = () => {
+  const { t } = useTranslation();
+
   const {
     register,
     handleSubmit,
@@ -19,93 +28,207 @@ const Registration: React.FC = () => {
     formState: { errors },
   } = useForm<FormData>({ mode: 'onTouched' });
 
+  const watchedValues = useWatch({ control });
+  const debouncedValues = useDebounce(watchedValues, 500);
+
   const onSubmit = (data: FormData) => {
     console.log('Form data:', data);
   };
 
+  // const emailField = formFields.find(f => f.name === 'email');
+
+  useEffect(() => {
+    console.log('Debounced form values:', debouncedValues);
+  }, [debouncedValues]);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
+      {/* ======================= Personal Info Section ======================= */}
       <div className="flex flex-col gap-5">
-        {/* Personal Information Section */}
-        <h2>Personal Info</h2>
+        <h2>{t('form.personalInfo')}</h2>
 
         {/* First Row: First Name & Last Name */}
-        <div className="flex gap-6">
+        <div className="flex flex-row gap-6">
           {formFields.slice(0, 2).map(field => (
-            <div key={field.name} className={`${field.className} flex flex-col gap-1.5`}>
-              <Label name={field.label} title={field.info} />
-              <input
-                {...register(field.name as keyof FormData, {
-                  required: field.requiredMsg,
-                })}
-                placeholder={field.placeholder}
-                className={`register-input ${errors[field.name as keyof FormData] ? 'border-red-500' : ''}`}
-              />
-            </div>
+            <Controller
+              key={field.name}
+              name={field.name as keyof FormData}
+              control={control}
+              rules={{ required: t('form.required') }}
+              render={({ field: controllerField }) => (
+                <TextInput
+                  name={controllerField.name}
+                  label={t(`form.${field.name}.label`)}
+                  placeholder={t(`form.${field.name}.placeholder`)}
+                  onChange={controllerField.onChange}
+                  value={typeof controllerField.value === 'string' ? controllerField.value : ''}
+                  required
+                  error={!!errors[field.name as keyof FormData]}
+                  title={t(`form.${field.name}.info`)}
+                />
+              )}
+            />
           ))}
         </div>
-
-        {/* Gender & Residence Country */}
-        {formFields.slice(2).map(field => (
-          <div key={field.name} className="flex flex-col gap-1.5">
-            <Label name={field.label} title={field.info} />
-            {field.type === 'select' ? (
+        {/* <Controller
+          name="residenceCountry"
+          control={control}
+          rules={{ required: t('form.required') }}
+          render={({ field }) => (
+            <div className="flex flex-col gap-1.5">
+              <Label name={t('form.residenceCountry.label')} title={t('form.residenceCountry.info')} />
               <select
-                {...register(field.name as keyof FormData, {
-                  required: field.requiredMsg,
-                })}
+                {...field}
                 defaultValue=""
-                className={`register-input ${errors[field.name as keyof FormData] ? 'border-red-500' : ''}`}
+                className={`register-input ${errors.residenceCountry ? 'border-red-500' : ''}`}
               >
+                <option value="" disabled>{t('form.residenceCountry.placeholder')}</option>
                 {field.options?.map(opt => (
-                  <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
-                    {opt.label}
+                  <option key={opt.value} value={opt.value}>
+                    {t(`form.residenceCountry.${opt.value}`, opt.label)}
                   </option>
                 ))}
               </select>
-            ) : null}
-          </div>
-        ))}
+            </div>
+          )}
+        /> */}
+        {formFields.map(field => {
+          const isError = !!errors[field.name as keyof FormData];
+
+          if (field.type === 'select') {
+            return (
+              <Controller
+                key={field.name}
+                name={field.name as keyof FormData}
+                control={control}
+                rules={{ required: t('form.required') }}
+                render={({ field: controllerField }) => (
+                  <Dropdown
+                    name={controllerField.name}
+                    label={t(`form.${field.name}.label`)}
+                    title={t(`form.${field.name}.info`)}
+                    value={typeof controllerField.value === 'string' ? controllerField.value : ''}
+                    onChange={controllerField.onChange}
+                    options={field.options!.map(opt => ({
+                      value: opt.value,
+                      label: t(`form.${field.name}.${opt.value}`, opt.label),
+                    }))}
+                    error={isError}
+                    required
+                  />
+                )}
+              />
+            );
+          }
+
+          // More field types to follow, e.g., 'phone', 'text', etc.
+          return null;
+        })}
+        {/* {formFields.slice(2).map(field => (
+          <>
+            <div className="flex flex-col gap-1.5">
+              New {field.name} input
+            </div>
+            <div key={field.name} className="flex flex-col gap-1.5">
+              <Label name={t(`form.${field.name}.label`)} title={t(`form.${field.name}.info`)} />
+              {field.type === 'select' && (
+                <select
+                  {...register(field.name as keyof FormData, {
+                    required: t('form.required'),
+                  })}
+                  defaultValue=""
+                  className={`register-input ${errors[field.name as keyof FormData] ? 'border-red-500' : ''}`}
+                >
+                  <option value="" disabled>
+                    {t(`form.${field.name}.placeholder`)}
+                  </option>
+                  {field.options?.map(opt => (
+                    <option key={opt.value} value={opt.value}>
+                      {t(`form.${field.name}.${opt.value}`, opt.label)}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </div>
+          </>
+        ))} */}
       </div>
 
+      {/* ======================= Contact Details Section ======================= */}
       <div className="flex flex-col gap-5">
-        {/* Contact Details Section */}
-        <h2>Contact Details</h2>
+        <h2>{t('form.contactDetails')}</h2>
 
         {/* Email */}
-        <div className="flex flex-col gap-1.5">
-          <Label
-            name="Email"
-            title="Enter your email. We'll use it to complete your registration."
-          />
-          <input
-            {...register('email', {
-              required: 'Email is required',
-              pattern: {
-                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                message: 'Invalid email address',
-              },
-            })}
-            type="email"
-            placeholder="Enter email address..."
-            className={`register-input ${errors.email ? 'border-red-500' : ''}`}
-          />
-        </div>
+        <Controller
+          name="email"
+          control={control}
+          rules={{
+            required: t('form.required'),
+            pattern: {
+              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+              message: t('form.email.invalid'),
+            },
+          }}
+          render={({ field }) => (
+            <TextInput
+              name="email"
+              label={t('form.email.label')}
+              placeholder={t('form.email.placeholder')}
+              value={field.value}
+              onChange={field.onChange}
+              required
+              error={!!errors.email}
+              title={t('form.email.info')}
+            />
+          )}
+        />
+        {/* <Controller
+          name={emailField.name}
+          control={control}
+          rules={{
+            required: t('form.required'),
+            pattern: { emailField.pattern },
+          }}
+          render={({ field }) => (
+            <TextInput
+              name={emailField.name}
+              label={t(`form.${emailField.name}.label`)}
+              placeholder={t(`form.${emailField.name}.placeholder`)}
+              value={field.value}
+              onChange={field.onChange}
+              required
+              error={!!errors[emailField.name]}
+              title={t(`form.${emailField.name}.info`)}
+            />
+          )}
+        /> */}
 
         {/* Phone Number */}
-        <div className="flex flex-col gap-1.5">
-          <Label
-            name="Phone Number"
-            title="Enter a valid phone number where we can reach you out."
-          />
+        <Controller
+          name="phoneNumber"
+          control={control}
+          rules={{ required: t('form.required') }}
+          render={({ field }) => (
+            <PhoneInput
+              {...field}
+              placeholder={t('form.phone.placeholder')}
+              defaultCountry="AE"
+              international
+              countryCallingCodeEditable={false}
+              className={`w-full register-input ${errors.phoneNumber ? 'border-red-500' : ''}`}
+            />
+          )}
+        />
+        {/* <div className="flex flex-col gap-1.5">
+          <Label name={t('form.phone.label')} title={t('form.phone.info')} />
           <Controller
             name="phoneNumber"
             control={control}
-            rules={{ required: 'Phone number is required' }}
+            rules={{ required: t('form.required') }}
             render={({ field }) => (
               <PhoneInput
                 {...field}
-                placeholder="(___) - ____"
+                placeholder={t('form.phone.placeholder')}
                 defaultCountry="AE"
                 international
                 countryCallingCodeEditable={false}
@@ -113,38 +236,32 @@ const Registration: React.FC = () => {
               />
             )}
           />
-        </div>
+        </div> */}
       </div>
 
-      {/* Agree Terms */}
-      <div className="register-terms">
-        <div className="relative w-6 h-6">
-          <input
-            {...register('agreeTerms', { required: 'You must agree to the terms' })}
-            type="checkbox"
+      {/* ======================= Terms & Conditions Section ======================= */}
+      <Controller
+        name="agreeTerms"
+        control={control}
+        rules={{ required: 'You must agree to the terms' }}
+        render={({ field }) => (
+          <Checkbox
             id="agreeTerms"
-            className="peer absolute opacity-0 w-full h-full cursor-pointer"
+            label={
+              <Trans i18nKey="form.agreeTermsHtml">I agree to the<a href="/terms" target="_blank" rel="noreferrer">terms and conditions</a> and <a href="/privacy" target="_blank" rel="noreferrer">privacy policy</a>.</Trans>
+            }
+            checked={field.value}
+            onChange={field.onChange}
+            error={errors.agreeTerms?.message}
           />
-          <img src={CheckboxIcon} alt="Checkbox" className="peer-checked:hidden w-6 h-6" />
-          <img
-            src={CheckboxCheckedIcon}
-            alt="Checked Checkbox"
-            className="hidden peer-checked:block w-6 h-6"
-          />
-        </div>
+        )}
+      />
 
-        <label htmlFor="agreeTerms" className="register-terms-text">
-          I agree to the{' '}
-          <a href="/terms" target="_blank" rel="noreferrer">
-            terms and conditions
-          </a>{' '}
-          and{' '}
-          <a href="/privacy" target="_blank" rel="noreferrer">
-            privacy policy.
-          </a>
-          <span className="text-red-500">*</span>
-        </label>
-      </div>
+      {/* <label htmlFor="agreeTerms" className="register-terms-text">
+        <Trans i18nKey="form.agreeTermsHtml">
+          I agree to the <a href="/terms" target="_blank" rel="noreferrer">terms and conditions</a> and <a href="/privacy" target="_blank" rel="noreferrer">privacy policy</a>.
+        </Trans>
+      </label> */}
     </form>
   );
 };

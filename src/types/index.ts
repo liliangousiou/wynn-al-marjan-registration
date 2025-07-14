@@ -54,3 +54,25 @@ export type FormData = {
 };
 
 export type OTPMethod = 'phone' | 'email';
+
+type Option = {
+  value: string;
+  label: string;
+};
+
+type PatternRule = {
+  value: RegExp;
+  message: string;
+};
+
+export type FormField = {
+  name: keyof FormData;
+  label: string;
+  placeholder?: string;
+  type: 'text' | 'email' | 'select';
+  requiredMsg: string;
+  info?: string;
+  className?: string;
+  options?: Option[]; // Only for type === 'select'
+  pattern?: PatternRule; // Only for type === 'email' (or anything with regex)
+};
