@@ -1,4 +1,4 @@
-import { OTPSendCode, OTPVerification, PersonalInfoForm } from 'pages';
+import { OTPSendCode, OTPVerification, Registration } from 'pages';
 import type { ContactLink, DisplayLang, LanguageCode, RegistrationStep, SocialLink } from 'types';
 import { Android, Apple, Facebook, Instagram, Twitter } from 'assets/social';
 
@@ -38,7 +38,7 @@ export const registrationSteps: RegistrationStep[] = [
   {
     step: 1,
     path: '/register/form',
-    component: PersonalInfoForm,
+    component: Registration,
   },
   {
     step: 2,

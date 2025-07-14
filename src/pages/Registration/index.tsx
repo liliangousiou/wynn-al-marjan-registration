@@ -11,7 +11,7 @@ import CheckboxCheckedIcon from 'assets/checkbox-checked.svg';
 import 'react-phone-number-input/style.css';
 import './index.scss';
 
-const PersonalInfoForm: React.FC = () => {
+const Registration: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -149,4 +149,4 @@ const PersonalInfoForm: React.FC = () => {
   );
 };
 
-export default PersonalInfoForm;
+export default Registration;
