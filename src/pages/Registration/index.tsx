@@ -3,7 +3,9 @@ import { FormProvider as RHFProvider, useForm } from 'react-hook-form';
 import axios from 'axios';
 
 import { DynamicField } from 'components/Form';
+import { useNextStepNavigation } from 'components/RegistrationLayout';
 import { useFormContextStep } from 'context/FormContext';
+import { registrationSteps } from 'constants/index';
 import type { FormData } from 'types';
 import { formFields } from 'utils/formFields';
 
@@ -15,6 +17,8 @@ const Registration: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const navigateNextStep = useNextStepNavigation();
+
   const onSubmit = async (data: FormData) => {
     try {
       setLoading(true);
@@ -22,7 +26,12 @@ const Registration: React.FC = () => {
       console.log('Submitting...', data);
       const response = await axios.post('/api/register', data);
       console.log('Submission success:', response.data);
-      // TODO: Go to next step 
+
+      // Navigate to the next step (Send OTP Code)
+      const otpStep = registrationSteps.find(step => step.step === 2);
+      if (otpStep) {
+        navigateNextStep();
+      }
     } catch (err: any) {
       console.error('Submission failure', err);
       setError('An error occurred. Please try again.');
@@ -38,7 +47,7 @@ const Registration: React.FC = () => {
     return () => {
       submitStepRef.current = null;
     };
-  }, [handleSubmit, onSubmit, submitStepRef]);
+  }, [handleSubmit, submitStepRef]);
 
   return (
     <RHFProvider {...methods}>

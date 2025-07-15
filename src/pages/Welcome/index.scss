@@ -1,0 +1,9 @@
+@use 'styles/global.scss';
+
+.container {
+  @apply flex flex-col justify-center items-center text-center px-4 md:px-8 py-16 mx-auto;
+}
+
+.description {
+  @apply font-avenir text-gray-600 my-6;
+}

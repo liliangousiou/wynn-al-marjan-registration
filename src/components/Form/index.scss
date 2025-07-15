@@ -1,6 +1,5 @@
 @use 'styles/global.scss';
 
-
 /* common styles */
 @layer components {
   .form-input-base {
@@ -12,14 +11,13 @@
   }
 
   .flex-50 {
-    flex: 0 0 50%;
+    flex: 0 0 48.2%;
   }
 
   .flex-100 {
     flex: 0 0 100%;
   }
 }
-
 
 /* label styles */
 .label-base {
@@ -29,15 +27,14 @@
 label {
   @apply flex items-center justify-between font-caslon font-medium text-sm leading-[140%] tracking-[0.03em] text-dark capitalize h-5;
 
-  >a {
+  > a {
     @apply text-chocolate underline;
   }
 
-  >img {
+  > img {
     @apply ml-2 cursor-pointer;
   }
 }
-
 
 /* checkbox input */
 .checkbox-container {
@@ -55,7 +52,6 @@ label {
     @apply px-1.5;
   }
 }
-
 
 /* dropdown input */
 .dropdown-custom {
@@ -75,7 +71,6 @@ label {
   }
 }
 
-
 /* text input - email full, text half width */
 .text-input-wrapper {
   @apply w-full sm:w-1/2 flex flex-col gap-1.5 flex-100 sm:flex-50;
@@ -94,7 +89,6 @@ label {
     }
   }
 }
-
 
 /* phone number input */
 .phone-number {

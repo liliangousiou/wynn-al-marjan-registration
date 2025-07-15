@@ -116,5 +116,9 @@
     "title": "Page Not Found",
     "description": "The page you’re looking for doesn’t exist or has been moved.",
     "cta": "Go to Registration"
+  },
+  "welcome": {
+    "title": "Welcome {{name}}!",
+    "description": "Your registration has been successful, happy to have you here."
   }
 }

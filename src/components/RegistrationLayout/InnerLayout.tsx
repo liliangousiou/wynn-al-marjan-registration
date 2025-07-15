@@ -9,10 +9,9 @@ import Title from './Title';
 
 type InnerLayoutProps = {
   children: React.ReactNode;
-  onSubmitStep: () => void;
 };
 
-const InnerLayout: React.FC<InnerLayoutProps> = ({ children, onSubmitStep }) => {
+const InnerLayout: React.FC<InnerLayoutProps> = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { submitStepRef } = useFormContextStep();

@@ -8,11 +8,13 @@
     /* Imports alias */
     "baseUrl": "src",
     "paths": {
+      "api": ["api"],
       "assets": ["assets"],
       "components": ["components"],
       "context": ["context"],
       "constants": ["constants"],
       "hooks": ["hooks"],
+      "routes": ["routes"],
       "pages": ["pages"],
       "styles": ["styles"],
       "types": ["types"],

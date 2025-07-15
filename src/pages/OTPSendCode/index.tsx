@@ -1,50 +1,68 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
-import type { OTPMethod } from 'types';
-import RadioIcon from 'assets/radio.svg';
-import RadioCheckedIcon from 'assets/radio-checked.svg';
+import { api, getErrorMessage } from 'api/client';
 
-import './index.scss';
+interface SendOtpRequest {
+  email: string;
+}
+interface SendOtpResponse {
+  success: boolean;
+  message?: string;
+}
 
 const OTPSendCode: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
-  const [selected, setSelected] = useState<OTPMethod>('phone');
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSendCode = async () => {
+    if (!email) {
+      setError('Please enter your email');
+      return;
+    }
+
+    try {
+      setLoading(true);
+      setError(null);
+
+      const payload: SendOtpRequest = { email };
+      const response = await api.post<SendOtpResponse>('/send/otp', payload);
+
+      if (response.data.success) {
+        navigate('/verify-otp', { state: { email } });
+      } else {
+        setError(response.data.message || 'Failed to send OTP');
+      }
+    } catch (err) {
+      setError(getErrorMessage(err));
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="otp-container">
-      {/* Step Title */}
-      <h2>{t('registration.otpVerification')}</h2>
+      <h2>{t('verification.sendCodeTitle')}</h2>
 
-      {/* White Box Wrapper */}
       <div className="white-box">
-        <div className="header-section">
-          <h3 className="header-title">{t('otp.sendTitle')}</h3>
-          <p className="header-subtitle">{t('otp.sendDescription')}</p>
-        </div>
+        <input
+          type="email"
+          placeholder={t('form.email.label')}
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className="text-input"
+        />
 
-        {/* Radio Buttons */}
-        <div className="radio-wrapper">
-          {(['phone', 'email'] as OTPMethod[]).map(method => (
-            <label key={method} className="radio-label">
-              <input
-                type="radio"
-                name="otpMethod"
-                value={method}
-                checked={selected === method}
-                onChange={() => setSelected(method)}
-                className="radio-input hidden"
-              />
-              <img
-                src={selected === method ? RadioCheckedIcon : RadioIcon}
-                alt={selected === method ? 'Checked radio' : 'Radio'}
-                className="radio-icon"
-              />
-              {method === 'phone' ? t('otp.sendToPhone') : t('otp.sendToEmail')}
-            </label>
-          ))}
-        </div>
+        {error && <p className="text-red mt-2">{error}</p>}
+
+        <button className="btn-primary mt-4" onClick={handleSendCode} disabled={loading || !email}>
+          {loading ? t('verification.sending') : t('verification.sendCode')}
+        </button>
       </div>
     </div>
   );

@@ -1,35 +1,20 @@
-import { useTranslation } from 'react-i18next';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import { Layout, RegistrationLayout } from 'components';
-import { NotFound } from 'pages';
+import { AuthProvider } from 'context/AuthContext';
+import { RegistrationProvider } from 'context/RegistrationContext';
+import { AppRoutes } from 'routes';
 
-import { registrationSteps } from './constants';
-
-function App() {
-  const { ready } = useTranslation();
-
-  if (!ready) return null; // TODO: add loader
-
+const App: React.FC = () => {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Navigate to="/register/form" replace />} />
-        {registrationSteps.map(({ path, component: Component }, index) => (
-          <Route
-            key={index}
-            path={path}
-            element={
-              <RegistrationLayout>
-                <Component />
-              </RegistrationLayout>
-            }
-          />
-        ))}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Layout>
+    <AuthProvider>
+      <RegistrationProvider>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </RegistrationProvider>
+    </AuthProvider>
   );
-}
+};
 
 export default App;

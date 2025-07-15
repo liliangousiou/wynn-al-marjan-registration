@@ -1,19 +1,40 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { FormProvider } from 'context/FormContext';
+import { registrationSteps } from 'constants/index';
+import type { RegistrationStep } from 'types';
 
 import InnerLayout from './InnerLayout';
 
-type RegistrationLayoutProps = {
-  children: React.ReactNode;
-  onSubmitStep: () => void;
+export const useNextStepNavigation = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  return () => {
+    const currentStepIndex = registrationSteps.findIndex(
+      (step: RegistrationStep) => step.path === location.pathname
+    );
+    const nextStep = registrationSteps[currentStepIndex + 1];
+
+    if (nextStep) {
+      navigate(nextStep.path);
+    } else {
+      // Last step → go to welcome
+      navigate('/welcome');
+    }
+  };
 };
 
-const RegistrationLayout: React.FC<RegistrationLayoutProps> = ({ children, onSubmitStep }) => {
+export interface RegistrationLayoutProps {
+  children: React.ReactNode;
+}
+
+const RegistrationLayout: React.FC<RegistrationLayoutProps> = ({ children }) => {
   return (
     <main>
       <FormProvider>
-        <InnerLayout onSubmitStep={onSubmitStep}>{children}</InnerLayout>
+        <InnerLayout>{children}</InnerLayout>
       </FormProvider>
     </main>
   );
