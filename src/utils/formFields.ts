@@ -1,19 +1,6 @@
-import type { FormField } from 'types';
+import type { FieldGroup, FormField } from 'types';
 
-/*
-
-TODO: GROUPS
-export const personalInfoFields: FieldConfig[] = [
-  { name: 'firstName', ... },
-  { name: 'lastName', ... },
-];
-
-export const contactDetailsFields: FieldConfig[] = [
-  { name: 'email', ... },
-  { name: 'phone', ... },
-];
-
-*/
+export const groupedFieldGroups: FieldGroup[] = ['personalInfo', 'contactDetails'];
 
 export const formFields: FormField[] = [
   {
@@ -24,6 +11,7 @@ export const formFields: FormField[] = [
     requiredMsg: 'form.firstName.required',
     info: 'form.firstName.info',
     className: 'flex-1',
+    group: 'personalInfo',
   },
   {
     name: 'lastName',
@@ -33,6 +21,7 @@ export const formFields: FormField[] = [
     requiredMsg: 'form.lastName.required',
     info: 'form.lastName.info',
     className: 'flex-1',
+    group: 'personalInfo',
   },
   {
     name: 'gender',
@@ -47,6 +36,7 @@ export const formFields: FormField[] = [
       { value: 'other', label: 'form.gender.other' },
       { value: 'preferNotToSay', label: 'form.gender.preferNotToSay' },
     ],
+    group: 'personalInfo',
   },
   {
     name: 'residenceCountry',
@@ -59,7 +49,9 @@ export const formFields: FormField[] = [
       { value: 'ae', label: 'form.residenceCountry.ae' },
       { value: 'us', label: 'form.residenceCountry.us' },
       { value: 'uk', label: 'form.residenceCountry.uk' },
+      { value: 'gr', label: 'form.residenceCountry.gr' },
     ],
+    group: 'personalInfo',
   },
   {
     name: 'email',
@@ -72,6 +64,7 @@ export const formFields: FormField[] = [
       message: 'form.email.invalid',
     },
     info: 'form.email.info',
+    group: 'contactDetails',
   },
   {
     name: 'phoneNumber',
@@ -79,6 +72,7 @@ export const formFields: FormField[] = [
     label: 'form.phoneNumber.label',
     requiredMsg: 'form.phoneNumber.required',
     info: 'form.phoneNumber.info',
+    group: 'contactDetails',
   },
   {
     name: 'agreeTerms',
@@ -86,5 +80,6 @@ export const formFields: FormField[] = [
     label: 'form.agreeTerms.label',
     placeholder: 'form.agreeTerms.placeholder',
     requiredMsg: 'form.agreeTerms.required',
+    group: 'contactDetails',
   },
 ];

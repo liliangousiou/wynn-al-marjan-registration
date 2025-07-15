@@ -34,7 +34,10 @@ const DynamicField: React.FC<Props> = ({ field }) => {
           error={!!error}
           options={field.options!.map(opt => ({
             value: opt.value,
-            label: t(`form.${field.name}.${opt.value}`, opt.label),
+            label:
+              opt.value === ''
+                ? t(`form.${field.name}.placeholder`, opt.label)
+                : t(`form.${field.name}.${opt.value}`, opt.label),
           }))}
         />
       );

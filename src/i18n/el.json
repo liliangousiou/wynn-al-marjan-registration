@@ -15,21 +15,21 @@
       "gift-cards": "Κάρτες Δώρων",
       "stories": "Ιστορίες Wynn",
       "slots-app": "Εφαρμογή Wynn Slots",
-      "mobile-app": "Κινητή Εφαρμογή",
+      "mobile-app": "Εφαρμογή κινητού",
       "responsible-gaming": "Υπεύθυνο Παιχνίδι",
       "about": "Σχετικά με εμάς",
-      "careers": "Καριέρες",
-      "investors": "Σχέσεις με Επενδυτές",
+      "careers": "Καριέρα",
+      "investors": "Σχέσεις Επενδυτών",
       "privacy": "Πολιτική Απορρήτου",
       "terms": "Όροι Χρήσης",
-      "hotel-info": "Πληροφορίες & Οδηγός Ξενοδοχείου",
+      "hotel-info": "Πληροφορίες & Κατάλογος Ξενοδοχείου",
       "wynn-palace": "Wynn Palace Cotai",
       "encore-boston": "Encore Boston Harbor",
       "wynn-macau": "Wynn Macau"
     },
     "contact": {
-      "name": "Wynn Νήσος Μαργιάν",
-      "address": "Νήσος Μαργιάν, Ρας Αλ Καϊμάχ",
+      "name": "Wynn Νησί Al Marjan",
+      "address": "Νησί Al Marjan, Ρας Αλ Καϊμά",
       "phone": "+971 7 209 6699"
     },
     "connect": "Συνδεθείτε μαζί μας.",
@@ -42,7 +42,7 @@
     "emailPlaceholder": "Η διεύθυνση email σας",
     "emailRequired": "Το email είναι υποχρεωτικό",
     "emailInvalid": "Εισάγετε μια έγκυρη διεύθυνση email",
-    "cta": "Εγγραφή στο newsletter",
+    "cta": "Εγγραφείτε στο newsletter",
     "success": "Ευχαριστούμε για την εγγραφή σας!",
     "error": "Κάτι πήγε στραβά. Δοκιμάστε ξανά αργότερα."
   },
@@ -53,6 +53,10 @@
     "otpVerification": "Επαλήθευση OTP"
   },
   "form": {
+    "groups": {
+      "personalInfo": "Προσωπικές Πληροφορίες",
+      "contactDetails": "Στοιχεία Επικοινωνίας"
+    },
     "required": "Αυτό το πεδίο είναι υποχρεωτικό.",
     "personalInfo": "Προσωπικές Πληροφορίες",
     "contactDetails": "Στοιχεία Επικοινωνίας",
@@ -76,7 +80,7 @@
       "preferNotToSay": "Προτιμώ να μην απαντήσω"
     },
     "residenceCountry": {
-      "label": "Χώρα Κατοικίας",
+      "label": "Χώρα Διαμονής",
       "placeholder": "Επιλέξτε τη χώρα σας",
       "info": "Αυτό μας βοηθά να κατανοήσουμε τη νομική σας δικαιοδοσία."
     },
@@ -115,5 +119,9 @@
     "title": "Η σελίδα δεν βρέθηκε",
     "description": "Η σελίδα που αναζητάτε δεν υπάρχει ή έχει μετακινηθεί.",
     "cta": "Μετάβαση στην Εγγραφή"
+  },
+  "welcome": {
+    "title": "Καλώς ήρθες {{name}}!",
+    "description": "Η εγγραφή σας ολοκληρώθηκε με επιτυχία, χαίρομαι που είστε εδώ."
   }
 }

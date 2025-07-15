@@ -27,11 +27,11 @@
 label {
   @apply flex items-center justify-between font-caslon font-medium text-sm leading-[140%] tracking-[0.03em] text-dark capitalize h-5;
 
-  > a {
+  >a {
     @apply text-chocolate underline;
   }
 
-  > img {
+  >img {
     @apply ml-2 cursor-pointer;
   }
 }
@@ -51,6 +51,11 @@ label {
   a {
     @apply px-1.5;
   }
+
+  &.error,
+  &.error>a {
+    @apply text-red;
+  }
 }
 
 /* dropdown input */
@@ -62,6 +67,18 @@ label {
 
     background: url('/src/assets/dropdown.svg') no-repeat right 20px center;
     background-size: 10px 5.5px;
+    background-color: white !important;
+
+    // /* TODO: Default value of placeholder */
+    // &.default {
+    //   color: #999999;
+    //   font-family: 'Avenir LT Std', sans-serif;
+    //   font-weight: 500;
+    //   font-style: normal;
+    //   font-size: 16px;
+    //   line-height: 150%;
+    //   letter-spacing: 0;
+    // }
 
     &.error,
     &.error:hover,
@@ -71,16 +88,10 @@ label {
   }
 }
 
-/* text input - email full, text half width */
-.text-input-wrapper {
-  @apply w-full sm:w-1/2 flex flex-col gap-1.5 flex-100 sm:flex-50;
-}
-
-.email-input-wrapper {
-  @apply flex flex-col gap-1.5 flex-100;
-}
-
+/* TODO text input - email full, text half width */
 .textinput-custom {
+  @apply w-full flex flex-1 flex-col gap-1.5 flex-100;
+
   input.form-input {
     @apply form-input-base appearance-none;
 
@@ -97,14 +108,14 @@ label {
   }
 
   &-wrapper {
-    @apply w-full h-[60px] bg-white rounded border border-borderGray px-5 py-[17px];
+    @apply w-full h-[60px] bg-white rounded border-[1.5px] border-borderGray px-5 py-[17px];
 
     &.error {
       @apply border-red;
     }
 
     .PhoneInputInput {
-      @apply w-full px-1 font-avenir font-normal text-base leading-[150%] text-dark bg-transparent;
+      @apply w-full px-1 font-avenir font-normal text-base leading-[150%] text-dark bg-transparent focus:outline-none focus:ring-0;
     }
   }
 }

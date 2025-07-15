@@ -31,6 +31,8 @@ const Dropdown: React.FC<DropdownProps> = ({
   error,
   title,
 }) => {
+  const isPlaceholder = !value || value === '';
+
   return (
     <div className="dropdown-custom">
       <Label name={label} title={title || label} />
@@ -40,7 +42,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         value={value}
         onChange={onChange}
         required={required}
-        className={clsx('form-input bg-white', { error: error })}
+        className={clsx('form-input', { error: error }, isPlaceholder && 'default')}
       >
         {options.map(opt => (
           <option key={opt.value} value={opt.value} disabled={opt.value === ''}>

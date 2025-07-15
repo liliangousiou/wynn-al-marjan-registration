@@ -40,6 +40,7 @@ const OTPVerification: React.FC = () => {
       setLoading(true);
       setError(null);
 
+      /** TODO: Mock endpoint */
       const payload: CheckOtpRequest = { otp };
       const response = await api.post<CheckOtpResponse>('/check/otp', payload);
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FormProvider as RHFProvider, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
 import { DynamicField } from 'components/Form';
@@ -7,9 +8,11 @@ import { useNextStepNavigation } from 'components/RegistrationLayout';
 import { useFormContextStep } from 'context/FormContext';
 import { registrationSteps } from 'constants/index';
 import type { FormData } from 'types';
-import { formFields } from 'utils/formFields';
+import { formFields, groupedFieldGroups } from 'utils/formFields';
 
 const Registration: React.FC = () => {
+  const { t } = useTranslation();
+
   const methods = useForm<FormData>();
   const { handleSubmit } = methods;
   const { submitStepRef } = useFormContextStep();
@@ -52,10 +55,21 @@ const Registration: React.FC = () => {
   return (
     <RHFProvider {...methods}>
       <form>
-        <div className="flex flex-wrap gap-5">
-          {formFields.map(field => (
-            <DynamicField key={field.name} field={field} />
-          ))}
+        <div className="flex flex-col gap-8">
+          {groupedFieldGroups.map(groupKey => {
+            const groupTitle = t(`form.groups.${groupKey}`);
+            const fieldsInGroup = formFields.filter(f => f.group === groupKey);
+
+            return (
+              <div key={groupKey} className="flex flex-col flex-wrap gap-5">
+                <h2>{groupTitle}</h2>
+
+                {fieldsInGroup.map(field => (
+                  <DynamicField key={field.name} field={field} />
+                ))}
+              </div>
+            );
+          })}
         </div>
 
         {error && <div className="text-red mt-4">{error}</div>}

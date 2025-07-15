@@ -42,7 +42,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ name, label, control, className = '
               className="checked hidden peer-checked:block w-6 h-6"
             />
           </div>
-          <label htmlFor={name} className={clsx('checkbox-label', { 'text-red': error })}>
+          <label htmlFor={name} className={clsx('checkbox-label', { error: error })}>
             <Trans
               i18nKey={label}
               components={{

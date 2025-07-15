@@ -65,6 +65,8 @@ type PatternRule = {
   message: string;
 };
 
+export type FieldGroup = 'personalInfo' | 'contactDetails';
+
 export type FormField = {
   name: keyof FormData;
   label: string;
@@ -75,4 +77,5 @@ export type FormField = {
   className?: string;
   options?: Option[]; // Only for type === 'select'
   pattern?: PatternRule; // Only for type === 'email' (or anything with regex)
+  group: FieldGroup;
 };

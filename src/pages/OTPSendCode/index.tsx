@@ -33,6 +33,7 @@ const OTPSendCode: React.FC = () => {
       const payload: SendOtpRequest = { email };
       const response = await api.post<SendOtpResponse>('/send/otp', payload);
 
+      /** TODO: Mock endpoint */
       if (response.data.success) {
         navigate('/verify-otp', { state: { email } });
       } else {

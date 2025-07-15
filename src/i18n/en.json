@@ -53,9 +53,11 @@
     "otpVerification": "OTP Verification"
   },
   "form": {
+    "groups": {
+      "personalInfo": "Personal Info",
+      "contactDetails": "Contact Details"
+    },
     "required": "This field is required.",
-    "personalInfo": "Personal Info",
-    "contactDetails": "Contact Details",
     "firstName": {
       "label": "First Name",
       "placeholder": "Enter your first name",
@@ -78,7 +80,11 @@
     "residenceCountry": {
       "label": "Country of Residence",
       "placeholder": "Select your country",
-      "info": "This helps us understand your legal jurisdiction."
+      "info": "This helps us understand your legal jurisdiction.",
+      "ae": "United Arab Emirates",
+      "uk": "United Kingdom",
+      "us": "United States",
+      "gr": "Greece"
     },
     "email": {
       "label": "Email Address",
