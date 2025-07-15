@@ -92,8 +92,7 @@
       "info": "يرجى تضمين رمز الدولة."
     },
     "agreeTerms": {
-      "label": "أوافق على <1>الشروط والأحكام</1> و<3>سياسة الخصوصية</3>.",
-      "placeholder": "أوافق على <a href='/terms' target='_blank' rel='noreferrer'>الشروط والأحكام</a> و<a href='/privacy' target='_blank' rel='noreferrer'>سياسة الخصوصية</a>."
+      "label": "أوافق على <1>الشروط والأحكام</1> و<3>سياسة الخصوصية</3>."
     }
   },
   "otp": {

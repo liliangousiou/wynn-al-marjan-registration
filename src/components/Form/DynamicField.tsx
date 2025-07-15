@@ -52,15 +52,7 @@ const DynamicField: React.FC<Props> = ({ field }) => {
       );
 
     case 'checkbox':
-      return (
-        <Checkbox
-          name={field.name}
-          label={label}
-          fallback={placeholder}
-          error={!!error}
-          control={control}
-        />
-      );
+      return <Checkbox name={field.name} label={label} error={!!error} control={control} />;
 
     default:
       return (

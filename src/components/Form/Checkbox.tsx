@@ -11,20 +11,12 @@ import './index.scss';
 type CheckboxProps = {
   name: string;
   label: string;
-  fallback: React.ReactNode;
   control: Control<FieldValues>;
   className?: string;
   error?: boolean;
 };
 
-const Checkbox: React.FC<CheckboxProps> = ({
-  name,
-  label,
-  fallback,
-  control,
-  className = '',
-  error,
-}) => {
+const Checkbox: React.FC<CheckboxProps> = ({ name, label, control, className = '', error }) => {
   return (
     <Controller
       name={name}
@@ -51,7 +43,13 @@ const Checkbox: React.FC<CheckboxProps> = ({
             />
           </div>
           <label htmlFor={name} className={clsx('checkbox-label', { 'text-red': error })}>
-            <Trans i18nKey={label}>{fallback}</Trans>
+            <Trans
+              i18nKey={label}
+              components={{
+                1: <a href="/terms" target="_blank" rel="noreferrer" />,
+                3: <a href="/privacy" target="_blank" rel="noreferrer" />,
+              }}
+            />
           </label>
         </div>
       )}

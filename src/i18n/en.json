@@ -92,8 +92,7 @@
       "info": "Please include your country code."
     },
     "agreeTerms": {
-      "label": "I agree to the <1>terms and conditions</1> and <3>privacy policy</3>.",
-      "placeholder": "I agree to the <a href='/terms' target='_blank' rel='noreferrer'>terms and conditions</a> and <a href='/privacy' target='_blank' rel='noreferrer'>privacy policy</a>."
+      "label": "I agree to the <1>terms and conditions</1> and <3>privacy policy</3>."
     }
   },
   "otp": {
