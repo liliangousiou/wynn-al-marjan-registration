@@ -10,6 +10,7 @@
     "paths": {
       "assets": ["assets"],
       "components": ["components"],
+      "context": ["context"],
       "constants": ["constants"],
       "hooks": ["hooks"],
       "pages": ["pages"],

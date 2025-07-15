@@ -16,6 +16,7 @@ export default {
         'neutral-dark': '#565759',
         muted: '#667085',
         darkBlue: '#101828',
+        borderGray: '#E8E9E9',
       },
       width: {
         layout: '630px',

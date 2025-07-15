@@ -69,7 +69,7 @@ export type FormField = {
   name: keyof FormData;
   label: string;
   placeholder?: string;
-  type: 'text' | 'email' | 'select';
+  type: 'text' | 'select' | 'email' | 'phone' | 'checkbox';
   requiredMsg: string;
   info?: string;
   className?: string;

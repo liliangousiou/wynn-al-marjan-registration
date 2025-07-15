@@ -1,5 +1,9 @@
 import React from 'react';
-import Label from '../Label';
+import clsx from 'clsx';
+
+import Label from './Label';
+
+import './index.scss';
 
 type TextInputProps = {
   name: string;
@@ -10,6 +14,7 @@ type TextInputProps = {
   required?: boolean;
   error?: boolean;
   title?: string;
+  type?: string;
 };
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -21,32 +26,20 @@ const TextInput: React.FC<TextInputProps> = ({
   required,
   error,
   title,
+  type = 'text',
 }) => {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className={`textinput-custom ${type}-input-wrapper w-100`}>
       <Label name={label} title={title || label} />
       <input
         id={name}
         name={name}
+        type={type}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        className={`form-input ${error ? 'border-red-500' : ''}`}
-        style={{
-          width: 303,
-          height: 60,
-          padding: '17px 20px',
-          borderRadius: 4,
-          borderWidth: '1.5px',
-          borderColor: error ? '#f87171' : '#E8E9E9',
-          backgroundColor: '#fff',
-          fontFamily: 'Actor, sans-serif',
-          fontWeight: 400,
-          fontSize: 16,
-          lineHeight: '150%',
-          color: '#1D1F22',
-        }}
+        className={clsx('form-input', { error: error })}
       />
     </div>
   );

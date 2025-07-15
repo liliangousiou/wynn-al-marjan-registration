@@ -1,30 +1,30 @@
 {
   "nav": {
     "rooms-and-suites": "الغرف والأجنحة",
-    "wynn-rewards": "مكافآت Wynn",
+    "wynn-rewards": "مكافآت وين",
     "offers": "العروض",
-    "dining": "تناول الطعام",
+    "dining": "المطاعم",
     "entertainment": "الترفيه",
     "meetings-and-events": "الاجتماعات والفعاليات"
   },
-  "back": "العودة",
+  "back": "رجوع",
   "next": "التالي",
   "footer": {
     "links": {
       "shop": "تسوق مجموعة المنزل",
       "gift-cards": "بطاقات الهدايا",
-      "stories": "قصص Wynn",
-      "slots-app": "تطبيق Wynn Slots",
-      "mobile-app": "تطبيق الهاتف",
+      "stories": "قصص وين",
+      "slots-app": "تطبيق وين سلوتس",
+      "mobile-app": "التطبيق المحمول",
       "responsible-gaming": "اللعب المسؤول",
-      "about": "من نحن",
+      "about": "معلومات عنا",
       "careers": "الوظائف",
       "investors": "علاقات المستثمرين",
       "privacy": "إشعار الخصوصية",
       "terms": "شروط الاستخدام",
       "hotel-info": "معلومات ودليل الفندق",
       "wynn-palace": "وين بالاس كوتاي",
-      "encore-boston": "انكور بوسطن هاربور",
+      "encore-boston": "إنكور بوسطن هاربر",
       "wynn-macau": "وين ماكاو"
     },
     "contact": {
@@ -34,79 +34,82 @@
     },
     "connect": "تواصل معنا.",
     "doNotSell": "لا تبيع أو تشارك بياناتي",
-    "copyright": "{{year}} شركة Wynn Resorts Holdings. جميع الحقوق محفوظة."
+    "copyright": "{{year}} وين ريزورتس هولدينغز، ذ.م.م. جميع الحقوق محفوظة."
   },
   "newsletter": {
     "title": "احصل على الأخبار والتحديثات",
-    "description": "اطلع على آخر المستجدات والأخبار المثيرة حول مستقبلنا!",
+    "description": "احصل على آخر التطورات والأخبار المثيرة حول كيفية تشكيلنا للمستقبل!",
     "emailPlaceholder": "عنوان بريدك الإلكتروني",
     "emailRequired": "البريد الإلكتروني مطلوب",
-    "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
-    "cta": "اشترك في النشرة",
+    "emailInvalid": "أدخل عنوان بريد إلكتروني صالح",
+    "cta": "اشترك في النشرة الإخبارية",
     "success": "شكرًا لاشتراكك!",
-    "error": "حدث خطأ ما. يرجى المحاولة لاحقًا."
+    "error": "حدث خطأ ما. حاول مرة أخرى لاحقًا."
   },
   "registration": {
     "title": "التسجيل",
     "stepIndicator": "الخطوة {{current}} من {{total}}",
-    "subtitle": "يرجى إدخال المعلومات التالية لإنشاء حسابك.",
-    "otpVerification": "التحقق من OTP"
+    "subtitle": "يرجى إدخال المعلومات أدناه لإنشاء حسابك.",
+    "otpVerification": "التحقق برمز OTP"
   },
   "form": {
     "required": "هذا الحقل مطلوب.",
-    "ppersonalInfo": "المعلومات الشخصية",
-    "contactDetails": "تفاصيل الاتصال",
+    "personalInfo": "المعلومات الشخصية",
+    "contactDetails": "بيانات التواصل",
     "firstName": {
       "label": "الاسم الأول",
       "placeholder": "أدخل اسمك الأول",
-      "info": "يرجى إدخال اسمك المعطى."
+      "info": "يرجى تقديم اسمك الشخصي."
     },
     "lastName": {
       "label": "اسم العائلة",
       "placeholder": "أدخل اسم العائلة",
-      "info": "يرجى إدخال اسم العائلة أو اللقب."
+      "info": "يرجى تقديم اسم العائلة أو اللقب."
     },
     "gender": {
       "label": "الجنس",
       "placeholder": "اختر جنسك",
-      "info": "نطلب هذه المعلومة لأغراض إحصائية فقط.",
-      "female": "أنثى",
+      "info": "نسأل هذا فقط لأغراض إحصائية.",
       "male": "ذكر",
+      "female": "أنثى",
       "other": "آخر",
       "preferNotToSay": "أفضل عدم الإجابة"
     },
     "residenceCountry": {
       "label": "بلد الإقامة",
       "placeholder": "اختر بلدك",
-      "info": "يساعدنا هذا في فهم نطاقك القانوني."
+      "info": "يساعدنا هذا في فهم ولايتك القانونية."
     },
     "email": {
-      "label": "البريد الإلكتروني",
+      "label": "عنوان البريد الإلكتروني",
       "placeholder": "أدخل بريدك الإلكتروني",
-      "info": "سوف نستخدم هذا للتواصل معك.",
+      "info": "سنستخدمه للتواصل معك.",
       "invalid": "يرجى إدخال بريد إلكتروني صالح."
     },
-    "phone": {
+    "phoneNumber": {
       "label": "رقم الهاتف",
       "placeholder": "أدخل رقم هاتفك",
       "info": "يرجى تضمين رمز الدولة."
     },
-    "agreeTermsHtml": "<أوافق على <1>الشروط والأحكام</1> و<3>سياسة الخصوصية</3><5>*</5>"
+    "agreeTerms": {
+      "label": "أوافق على <1>الشروط والأحكام</1> و<3>سياسة الخصوصية</3>.",
+      "placeholder": "أوافق على <a href='/terms' target='_blank' rel='noreferrer'>الشروط والأحكام</a> و<a href='/privacy' target='_blank' rel='noreferrer'>سياسة الخصوصية</a>."
+    }
   },
   "otp": {
     "sendTitle": "إرسال الرمز",
-    "sendDescription": "كيف تود استلام الرمز؟",
+    "sendDescription": "كيف تود تلقي الرمز؟",
     "sendToPhone": "إرسال إلى الهاتف",
     "sendToEmail": "إرسال إلى البريد الإلكتروني"
   },
   "verification": {
     "checkEmailTitle": "يرجى التحقق من بريدك الإلكتروني.",
-    "codeSent": "تم إرسال الرمز إلى {{email}}",
-    "noCode": "لم يصلك رمز؟ <resend>اضغط لإعادة الإرسال</resend>."
+    "codeSent": "لقد أرسلنا رمزًا إلى {{email}}",
+    "noCode": "لم تستلم رمزًا؟ <resend>اضغط لإعادة الإرسال</resend>."
   },
   "country": {
     "ae": "الإمارات العربية المتحدة",
-    "us": "الولايات المتحدة",
+    "us": "الولايات المتحدة الأمريكية",
     "uk": "المملكة المتحدة"
   },
   "notFound": {

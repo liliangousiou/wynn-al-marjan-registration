@@ -32,8 +32,9 @@ export default [
             ['^react', '^@?\\w'],
             // 🏷️ Alias imports (π.χ. constants, components, utils κ.λπ.)
             [
-              '^constants',
               '^components',
+              '^context',
+              '^constants',
               '^hooks',
               '^pages',
               '^styles',

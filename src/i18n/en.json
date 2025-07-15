@@ -70,16 +70,10 @@
       "label": "Gender",
       "placeholder": "Select your gender",
       "info": "We ask this for demographic purposes only.",
-      "female": "Female",
       "male": "Male",
+      "female": "Female",
       "other": "Other",
-      "preferNotToSay": "Prefer not to say",
-      "gender": {
-        "label": "Gender",
-        "male": "Male",
-        "female": "Female",
-        "placeholder": "Select gender"
-      }
+      "preferNotToSay": "Prefer not to say"
     },
     "residenceCountry": {
       "label": "Country of Residence",
@@ -92,12 +86,15 @@
       "info": "We’ll use this to contact you.",
       "invalid": "Please enter a valid email address."
     },
-    "phone": {
+    "phoneNumber": {
       "label": "Phone Number",
       "placeholder": "Enter your phone number",
       "info": "Please include your country code."
     },
-    "agreeTermsHtml": "I agree to the <1>terms and conditions</1> and <3>privacy policy</3>."
+    "agreeTerms": {
+      "label": "I agree to the <1>terms and conditions</1> and <3>privacy policy</3>.",
+      "placeholder": "I agree to the <a href='/terms' target='_blank' rel='noreferrer'>terms and conditions</a> and <a href='/privacy' target='_blank' rel='noreferrer'>privacy policy</a>."
+    }
   },
   "otp": {
     "sendTitle": "Send code",

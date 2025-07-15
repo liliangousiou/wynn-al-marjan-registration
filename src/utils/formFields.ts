@@ -1,61 +1,90 @@
-import type { FormField } from "types";
+import type { FormField } from 'types';
+
+/*
+
+TODO: GROUPS
+export const personalInfoFields: FieldConfig[] = [
+  { name: 'firstName', ... },
+  { name: 'lastName', ... },
+];
+
+export const contactDetailsFields: FieldConfig[] = [
+  { name: 'email', ... },
+  { name: 'phone', ... },
+];
+
+*/
 
 export const formFields: FormField[] = [
   {
     name: 'firstName',
-    label: 'First Name',
-    placeholder: 'Enter first name...',
     type: 'text',
-    requiredMsg: 'First name is required',
-    info: 'Your first name should match your ID',
+    label: 'form.firstName.label',
+    placeholder: 'form.firstName.placeholder',
+    requiredMsg: 'form.firstName.required',
+    info: 'form.firstName.info',
     className: 'flex-1',
   },
   {
     name: 'lastName',
-    label: 'Last Name',
-    placeholder: 'Enter last name...',
     type: 'text',
-    requiredMsg: 'Last name is required',
-    info: 'Your last name should match your ID',
+    label: 'form.lastName.label',
+    placeholder: 'form.lastName.placeholder',
+    requiredMsg: 'form.lastName.required',
+    info: 'form.lastName.info',
     className: 'flex-1',
   },
   {
     name: 'gender',
-    label: 'Gender',
     type: 'select',
-    requiredMsg: 'Gender is required',
+    label: 'form.gender.label',
+    requiredMsg: 'form.gender.required',
+    info: 'form.gender.info',
     options: [
-      { value: '', label: 'Select gender...' },
-      { value: 'female', label: 'Female' },
-      { value: 'male', label: 'Male' },
-      { value: 'other', label: 'Other' },
-      { value: 'preferNotToSay', label: 'Prefer not to say' },
+      { value: '', label: 'form.gender.placeholder' },
+      { value: 'female', label: 'form.gender.female' },
+      { value: 'male', label: 'form.gender.male' },
+      { value: 'other', label: 'form.gender.other' },
+      { value: 'preferNotToSay', label: 'form.gender.preferNotToSay' },
     ],
-    info: 'Select your gender',
   },
   {
     name: 'residenceCountry',
-    label: 'Your Residence Country',
     type: 'select',
-    requiredMsg: 'Residence country is required',
+    label: 'form.residenceCountry.label',
+    requiredMsg: 'form.residenceCountry.required',
+    info: 'form.residenceCountry.info',
     options: [
-      { value: '', label: 'Select residence country...' },
-      { value: 'ae', label: 'United Arab Emirates' },
-      { value: 'us', label: 'United States' },
-      { value: 'uk', label: 'United Kingdom' },
+      { value: '', label: 'form.residenceCountry.placeholder' },
+      { value: 'ae', label: 'form.residenceCountry.ae' },
+      { value: 'us', label: 'form.residenceCountry.us' },
+      { value: 'uk', label: 'form.residenceCountry.uk' },
     ],
-    info: 'Select residence country',
   },
   {
     name: 'email',
-    label: 'Email',
-    placeholder: 'Enter email address...',
     type: 'email',
-    requiredMsg: 'Email is required',
+    label: 'form.email.label',
+    placeholder: 'form.email.placeholder',
+    requiredMsg: 'form.email.required',
     pattern: {
       value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-      message: 'Invalid email address',
+      message: 'form.email.invalid',
     },
-    info: "Enter your email, we'll use it to complete your registration",
+    info: 'form.email.info',
+  },
+  {
+    name: 'phoneNumber',
+    type: 'phone',
+    label: 'form.phoneNumber.label',
+    requiredMsg: 'form.phoneNumber.required',
+    info: 'form.phoneNumber.info',
+  },
+  {
+    name: 'agreeTerms',
+    type: 'checkbox',
+    label: 'form.agreeTerms.label',
+    placeholder: 'form.agreeTerms.placeholder',
+    requiredMsg: 'form.agreeTerms.required',
   },
 ];

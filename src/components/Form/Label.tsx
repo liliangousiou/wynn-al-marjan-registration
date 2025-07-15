@@ -14,7 +14,7 @@ const Label: React.FC<LabelProps> = ({ name, title }) => (
     <div>
       {name} <span>*</span>
     </div>
-    <img src={info} alt={name} title={title} className="ml-2 cursor-pointer" />
+    <img src={info} alt={name} title={title} />
   </label>
 );
 
